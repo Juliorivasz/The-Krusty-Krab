@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Productos</title>
+    <link rel="stylesheet" href="../assets/dashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../assets/img/logo-the-krusty-krab-final.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../assets/img/home-sharp.svg" alt="Volver al Inicio">
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../assets/img/pricetag-outline.svg" alt="Promociones">
+                            <p>Promociones</p>
+                        </a>
+                    </li>
+                    <li><a href="#">
+                        <img src="../assets/img/document-text-outline.svg" alt="Pedidos">
+                        <p>Pedidos</p>
+                    </a>
+                    </li>
+                </ul>
+                <ol>
+                    <li>
+                        <a href="#">
+                            <img src="../assets/img/log-out-outline.svg" alt="Salida">
+                            <p>Salir</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search and Profile -->
+            <div class="top-bar">
+                <input type="search" placeholder="Buscar producto..." class="search-bar">
+                <div class="notification">
+                    <img src="../assets/img/campana.svg" alt="notificaciones">
+                </div>
+                <div class="profile">
+                    <img src="../assets/img/user.svg" alt="Usuario">
+                </div>
+            </div>
+
+            <!-- Categorías -->
+            <h1>Categoría</h1>
+            <div class="contain-categories">
+                <div class="categories">
+                    <button class="category-btn"><img src="../assets/img/cangreburger 2.svg" alt="Hamburguesa" class="iconosVarios">Hamburguesas</button>
+                    <button class="category-btn"><img src="../assets/img/pizza 1.svg" alt="Pizza" class="iconosVarios">Pizza</button>
+                    <button class="category-btn"><img src="../assets/img/empanadas 1.svg" alt="Empanadas" class="iconosVarios">Empanadas</button>
+                    <button class="category-btn"><img src="../assets/img/snacks 1.svg" alt="Snacks" class="iconosVarios">Snack</button>
+                    <button class="category-btn"><img src="../assets/img/helado 1.svg" alt="Helado" class="iconosVarios">Helados</button>
+                    <button class="category-btn"><img src="../assets/img/bebidas 1.svg" alt="Drinks" class="iconosVarios">Bebidas</button>
+                </div>
+                <button class="add-category-btn"><img src="../assets/img/add-circle-outline.svg" alt="Agregar-Categoria" class="iconosVarios"></button>
+            </div>
+
+            <!-- Productos -->
+            <div class="products">
+                <div class="product-card">
+                    <img src="../assets/img/cangreburger 2.svg" alt="Cangreburger">
+                    <div class="product-info">
+                        <h2 class="product-title">Cangreburger simple</h2>
+                        <p class="product-description">Pan de papa, medallón de carne, cheddar X2, lechuga, tomate, pepino.</p>
+                        <span class="price">$10.000</span>
+                    </div>
+                    <div class="actions">
+                        <button class="edit-btn"><img src="../assets/img/pencil.svg" alt="editar producto"></button>
+                        <button class="delete-btn"><img src="../assets/img/trash.svg" alt="elimnar producto"></button>
+                    </div>
+                </div>
+                <!-- Agregar más cards de productos aquí -->
+                <div class="add-product-card">
+                    <button>+</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <dialog class="myDialog">
+        <div class="contain-register-product">
+            <h2 class="register-title">Registro de Productos</h2>
+            <div class="contain-close-dialog"><img src="../assets/img/close-circle-outline.svg" alt="Cerrar ventana" class="close-dialog"></div>
+            <form>
+              <div class="form-image">
+                <label for="foto">Foto:</label>
+                <label for="foto" class="foto-label">+</label>
+                <input type="file" id="foto">
+              </div>
+              <div class="form-dish">
+                <label for="nombre">Nombre del Plato:</label>
+                <input type="text" id="nombre" placeholder="Ingrese el nombre del plato">
+              </div>
+              <div class="form-price">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" placeholder="Ingrese el precio">
+              </div>
+              <div class="form-description">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" placeholder="Ingrese la descripción del plato"></textarea>
+              </div>
+              <div class="form-ingredients">
+                <label for="ingredientes">Ingredientes:</label>
+                <div type="text" id="ingredientes" placeholder="Ingrese los ingredientes">
+                    <img src="../assets/img/add-circle-outline-white.svg" alt="cargar ingrediente">
+                </div>
+              </div>
+              <button type="submit">Cargar Plato</button>
+            </form>
+          </div>
+    </dialog>
+</body>
+<script src="../assets/dashboard.js"></script>
+</html>
