@@ -19,8 +19,16 @@ public class FormEntity {
     private Long id;
     // Este campo almacena el nombre recibido del formulario.
     private String nombre;
-    // Aca se almacena el email recibido del formulario.
+    @Column(unique = true)  // Los emails deben ser únicos. Aca se almacena el email recibido del formulario.
     private String email;
+    private String password;
 
+    @Enumerated(EnumType.STRING)  // Para roles de usuarios
+    private Role role;
+
+    // Enum para los roles
+    public enum Role {
+        ADMIN, CLIENTE
+    }
 }
 

@@ -11,5 +11,6 @@ public class FormDto {
     // Getters y setters
     private String nombre;
     private String email;
+    private String password;
 
 }
