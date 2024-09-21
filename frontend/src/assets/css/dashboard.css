@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 
-body {
+.body {
     font-family: 'Inter', sans-serif;
     display: flex;
     height: 100vh;
-    background-image:url(./img/fondohome2.jpg);
+    background-image:url('../img/fondohome2.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -24,7 +24,7 @@ img {
     height: 100%;
 }
 
-.container {
+.container-dashboard {
     display: flex;
     width: 100%;
 }
@@ -110,7 +110,7 @@ nav ul li a:hover, nav ol li a:hover {
 .search-bar {
     padding: 10px;
     padding-left: 40px;
-    background-image: url('/assets/img/search.svg');
+    background-image: url(../../assets/img/search.svg);
     background-repeat: no-repeat;
     background-position: 10px center;
     background-size: 20px;
@@ -174,7 +174,7 @@ h1 {
 }
 
 .categories::-webkit-scrollbar-thumb {
-    background: linear-gradient(to right, #99ffcc,#66ccff);
+    background: linear-gradient(to right, #337052,#2f5e75);
     background-size: 100% 200%;
     background-position: 0 0;
     border-radius: 10px;
@@ -228,6 +228,7 @@ h1 {
 /* Product card */
 .product-card {
     background-color: white;
+    color: #000;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -290,6 +291,8 @@ h1 {
     width: 30px;
     height: 30px;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 /* Add product card */
@@ -331,12 +334,13 @@ textarea {
 }
   
   /* Dialog styles */
-  dialog {
+  .myDialog {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
+    height: 90%;
     padding: 5% 20%;
     background-color: rgba(21, 25, 28, 0.90);
     color: #fff;
@@ -344,7 +348,7 @@ textarea {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
-    overflow: hidden;
+    overflow: auto;
     border: none;
   }
   
@@ -468,8 +472,8 @@ textarea {
 
   .contain-close-dialog{
     position: absolute;
-    top: -7%;
-    right: -63%;
+    top: -5%;
+    right: -60%;
     width: 30px;
     height: 30px;
   }

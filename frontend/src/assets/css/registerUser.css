@@ -24,7 +24,7 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('img/img-1.png'); 
+    background-image: url('../img/img-1.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -192,4 +192,16 @@ body, html {
 
 .create-account-btn:hover {
     color: #0056b3;
+}
+
+.register-user {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 30%;
+    min-width: 350px;
+    min-height: 200px;
 }
