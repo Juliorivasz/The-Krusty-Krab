@@ -12,6 +12,10 @@ const credentials = {
     password: '27158930'
 }
 
+const jugar = () => {
+    let quienJuega = 'bruno';
+}
+
 export const FormLogin = ({viewRecovery, setViewRecovery}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

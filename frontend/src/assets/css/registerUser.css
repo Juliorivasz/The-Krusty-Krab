@@ -205,3 +205,43 @@ body, html {
     min-width: 350px;
     min-height: 200px;
 }
+
+
+.codeDialog {
+
+}
+
+.codeTitle {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.codeForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 10%;
+}
+
+.codeInput {
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    filter: drop-shadow(4px 4px 5px rgba(255, 255, 255, .3));
+    color: white;
+    background: rgba(14, 18, 20, 1);
+    border: none;
+    font-size: 1.5rem;
+}
+
+.container-codeReSend {
+    opacity: .5;
+}
+
+.codeReSend {
+    margin: .3rem;
+    color: #fff;
+    opacity: 1;
+}
+

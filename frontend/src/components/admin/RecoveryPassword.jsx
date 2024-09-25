@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MessageError } from "../MessageError";
+import { CodeRecovery } from "../modal/CodeRecovery";
 
 const dni = {
     email: 'julioandresrivas@gmail.com'
@@ -11,6 +12,7 @@ export const RecoveryPassword = ({viewRecovery, setViewRecovery}) => {
 
     const [viewError, setViewError] = useState(false);
     const [forgotEmail, setForgotEmail] = useState('');
+    const [isSent, setIsSent] = useState(false);
     
     const changeView = () => {
         setViewRecovery(!viewRecovery);
@@ -20,6 +22,7 @@ export const RecoveryPassword = ({viewRecovery, setViewRecovery}) => {
         e.preventDefault();
         if(dni.email == forgotEmail) {
             setViewError(false);
+            setIsSent(true);
         }else {
             setViewError(true);
         }
@@ -41,6 +44,7 @@ export const RecoveryPassword = ({viewRecovery, setViewRecovery}) => {
             <Link className="create-account-btn" to={undefined} onClick={changeView}>Inicia sesión</Link>
         </div>
     </div>
+    <CodeRecovery isSent={isSent} setIsSent={setIsSent}/>
     </>
   )
 }

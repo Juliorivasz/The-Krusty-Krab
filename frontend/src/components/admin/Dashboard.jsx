@@ -22,7 +22,7 @@ export const Dashboard = () => {
     <>
     <div className='body'>
         <NavAdmin/>
-        <div className="container">
+        <div className="container-dashboard">
             <main className="main-content">
                 <SearchProduct/>
                 <h1>Categoría</h1>
