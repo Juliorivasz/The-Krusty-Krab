@@ -18,7 +18,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* paleta de colores */
-  --color-nav: #005478;
+  --color-nav: #022736;
+  --color-secondary: #005478;
   --color-bg-main: #CDE8E5;
   --color-bg-second: #7AB2B2;
   --color-black-main: #000000;

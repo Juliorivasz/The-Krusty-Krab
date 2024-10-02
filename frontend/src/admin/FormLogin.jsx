@@ -37,6 +37,7 @@ export const FormLogin = ({viewRecovery, setViewRecovery}) => {
         } else if(credentials.email == email && credentials.password == password ){
             setIsValidEmail(true);
             setIsValidPassword(true);
+            localStorage.setItem('Logged',true);
             navigate('/admin/home')
         }else {
             setIsValidEmail(false);

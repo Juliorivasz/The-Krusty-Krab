@@ -52,5 +52,22 @@ nav {
 
 .search-bar:focus::placeholder {
     opacity: 0;
-} 
+}
+
+.container-notify-cart-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+}
+
+.notification {
+    width: 30px;
+    height: 30px;
+}
+
+.cart, .profile {
+    width: 40px;
+    height: 40px;
+}
 

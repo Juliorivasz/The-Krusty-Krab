@@ -1,27 +1,35 @@
-export const Nav = () => {
+import { Link } from "react-router-dom";
+
+// eslint-disable-next-line react/prop-types
+export const Nav = ({ islogged }) => {
+
   return (
     <nav>
       <ul>
         <li>
-          <a href="#">
+          <Link to="/">
             <p>Inicio</p>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="#">
             <p>Menu</p>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="#">
             <p>Promociones</p>
-          </a>
+          </Link>
         </li>
-        <li>
-          <a href="#">
-            <p>Pedidos</p>
-          </a>
-        </li>
+        {islogged ? (
+          <li>
+            <Link to="#">
+              <p>Pedidos</p>
+            </Link>
+          </li>
+        ) : (
+          ""
+        )}
       </ul>
     </nav>
   );
