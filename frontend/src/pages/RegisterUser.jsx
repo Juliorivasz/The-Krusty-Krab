@@ -1,13 +1,13 @@
-import '../assets/css/registerUser.css';
+import '../assets/styles/registerUser.css';
 
 import tkk from '/TKK.svg';
-import logoFace from '../assets/img/logo-face.png';
-import logoGoogle from '../assets/img/circle-g-google-google-new-google-icon-825017.png';
-import eyeIcon from '../assets/img/eye.svg';
-import eyeWhiteIcon from '../assets/img/eye-white.svg';
+import logoFace from '../assets/img/logos/logo-face.png';
+import logoGoogle from '../assets/img/logos/circle-g-google-google-new-google-icon-825017.png';
+import eyeIcon from '../assets/img/icons/eye.svg';
+import eyeWhiteIcon from '../assets/img/icons/eye-white.svg';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { SucessForm } from './modal/SucessForm';
+import { SucessForm } from '../modal/SucessForm';
 
 const users = {
     nombre: "",

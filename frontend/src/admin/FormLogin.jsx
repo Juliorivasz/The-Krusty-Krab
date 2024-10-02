@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Link, useNavigate } from "react-router-dom"
-import logoFace from '../../assets/img/logo-face.png';
-import logoGoogle from '../../assets/img/circle-g-google-google-new-google-icon-825017.png';
-import eyeIcon from '../../assets/img/eye.svg';
-import eyeWhiteIcon from '../../assets/img/eye-white.svg';
+import logoFace from '../assets/img/logos/logo-face.png';
+import logoGoogle from '../assets/img/logos/circle-g-google-google-new-google-icon-825017.png';
+import eyeIcon from '../assets/img/icons/eye.svg';
+import eyeWhiteIcon from '../assets/img/icons/eye-white.svg';
 import { useState } from "react";
-import { MessageError } from "../../components/MessageError";
+import { MessageError } from "./MessageError";
 
 const credentials = {
     email: 'julioandresrivas@gmail.com',

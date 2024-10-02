@@ -1,13 +1,12 @@
-import '../../assets/css/dashboard.css';
+import '../assets/styles/dashboard.css';
 
 import { useState } from 'react';
 
-import { NavAdmin } from '../admin/NavAdmin'
-import { RegisterProduct } from '../../components/modal/RegisterProduct';
+import { RegisterProduct } from '../modal/RegisterProduct';
 
-import { SearchProduct } from '../admin/SearchProduct';
 import { Categories } from '../admin/categories';
 import { Products } from '../admin/Products';
+import { Header } from '../layouts/Header';
 
 
 export const Dashboard = () => {
@@ -20,11 +19,10 @@ export const Dashboard = () => {
 
   return (
     <>
+    <Header/>
     <div className='body'>
-        <NavAdmin/>
         <div className="container-dashboard">
             <main className="main-content">
-                <SearchProduct/>
                 <h1>Categoría</h1>
                 <Categories/>
                 <Products openModal={openModal}/>

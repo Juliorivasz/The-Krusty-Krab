@@ -2,8 +2,8 @@ import './App.css'
 
 
 import { Routes, Route } from 'react-router-dom';
-import { RegisterUser } from './components/RegisterUser';
-import { AdminRoutes } from './auth/admin/AdminRoutes'
+import { RegisterUser } from './pages/RegisterUser';
+import { AdminRoutes } from './admin/AdminRoutes'
 
 function App() {
 

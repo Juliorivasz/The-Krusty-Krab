@@ -1,6 +1,6 @@
 
 import { Route, Routes } from "react-router-dom";
-import { Login } from "./Login";
+import { Login } from "../pages/Login";
 // import { RecoveryPassword } from "./RecoveryPassword";
 // import { PasswordRecovered } from "./PasswordRecovered";
 import { Dashboard } from "../pages/Dashboard";

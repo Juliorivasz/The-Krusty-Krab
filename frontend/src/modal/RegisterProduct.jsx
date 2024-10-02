@@ -1,5 +1,5 @@
-import iconAddCircleWhite from '../../assets/img/add-circle-outline-white.svg';
-import iconCloseCircle from '../../assets/img/close-circle-outline.svg';
+import iconAddCircleWhite from '../assets/img/icons/add-circle-outline-white.svg';
+import iconCloseCircle from '../assets/img/icons/close-circle-outline.svg';
 
 // eslint-disable-next-line react/prop-types
 export const RegisterProduct = ({isOpen, setIsOpen}) => {

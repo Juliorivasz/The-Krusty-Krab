@@ -1,57 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--color-black-main);
+  background-color: var(--color-bg-main);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* paleta de colores */
+  --color-nav: #005478;
+  --color-bg-main: #CDE8E5;
+  --color-bg-second: #7AB2B2;
+  --color-black-main: #000000;
+  --color-white-main: #FFFFFF;
+  --color-input-dark: #022736;
+  --color-button: #F89604;
+}
+
+main {
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.body {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  height: 100%;
+  color: #000;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: inherit;
+  text-decoration: none;
 }
+
 a:hover {
-  color: #535bf2;
+  color: inherit;
+  cursor: pointer;
 }
 
-body {
-  margin: 0;
+ul, ol {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  justify-content: space-evenly;
+  gap: 1rem;
+  list-style: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-button);
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
   cursor: pointer;
-  transition: border-color 0.25s;
+  margin-top: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
 }
-button:hover {
-  border-color: #646cff;
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media (prefers-color-scheme: light) {
