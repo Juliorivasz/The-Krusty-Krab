@@ -5,7 +5,7 @@ import logoGoogle from '../../assets/img/circle-g-google-google-new-google-icon-
 import eyeIcon from '../../assets/img/eye.svg';
 import eyeWhiteIcon from '../../assets/img/eye-white.svg';
 import { useState } from "react";
-import { MessageError } from "../MessageError";
+import { MessageError } from "../../components/MessageError";
 
 const credentials = {
     email: 'julioandresrivas@gmail.com',

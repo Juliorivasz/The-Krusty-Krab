@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MessageError } from "../MessageError";
-import { CodeRecovery } from "../modal/CodeRecovery";
+import { MessageError } from "../../components/MessageError";
+import { CodeRecovery } from "../../components/modal/CodeRecovery";
 
 const dni = {
     email: 'julioandresrivas@gmail.com'

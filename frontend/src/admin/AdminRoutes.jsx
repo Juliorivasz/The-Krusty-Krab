@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Login } from "./Login";
 // import { RecoveryPassword } from "./RecoveryPassword";
 // import { PasswordRecovered } from "./PasswordRecovered";
-import { Dashboard } from "./Dashboard";
+import { Dashboard } from "../pages/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 
 export const AdminRoutes = () => {

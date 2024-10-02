@@ -2,12 +2,12 @@ import '../../assets/css/dashboard.css';
 
 import { useState } from 'react';
 
-import { NavAdmin } from './NavAdmin'
-import { RegisterProduct } from '../modal/RegisterProduct';
+import { NavAdmin } from '../admin/NavAdmin'
+import { RegisterProduct } from '../../components/modal/RegisterProduct';
 
-import { SearchProduct } from './SearchProduct';
-import { Categories } from './categories';
-import { Products } from './Products';
+import { SearchProduct } from '../admin/SearchProduct';
+import { Categories } from '../admin/categories';
+import { Products } from '../admin/Products';
 
 
 export const Dashboard = () => {

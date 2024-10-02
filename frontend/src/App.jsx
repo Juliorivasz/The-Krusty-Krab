@@ -3,7 +3,7 @@ import './App.css'
 
 import { Routes, Route } from 'react-router-dom';
 import { RegisterUser } from './components/RegisterUser';
-import { AdminRoutes } from './components/admin/AdminRoutes'
+import { AdminRoutes } from './auth/admin/AdminRoutes'
 
 function App() {
 
