@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
 
-import { Timer } from "../Timer";
+import { Timer } from "../admin/Timer";
 
 // eslint-disable-next-line react/prop-types
 export const CodeRecovery = ({isSent, setIsSent}) => {

@@ -1,7 +1,7 @@
 
-import cangreBurgers from '../../assets/img/cangreburger 2.svg';
-import pencil from '../../assets/img/pencil.svg';
-import trash from '../../assets/img/trash.svg';
+import cangreBurgers from '../assets/img/products/cangreburger 2.svg';
+import pencil from '../assets/img/icons/pencil.svg';
+import trash from '../assets/img/icons/trash.svg';
 
 export const Product = () => {
   return (

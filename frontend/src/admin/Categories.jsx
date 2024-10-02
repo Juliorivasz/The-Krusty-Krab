@@ -1,11 +1,11 @@
 
-import cangreBurgers from '../../assets/img/cangreburger 2.svg';
-import pizza from '../../assets/img/pizza 1.svg';
-import empanadas from '../../assets/img/empanadas 1.svg';
-import snacks from '../../assets/img/snacks 1.svg';
-import helado from '../../assets/img/helado 1.svg';
-import bebidas from '../../assets/img/bebidas 1.svg';
-import iconAddCircle from '../../assets/img/add-circle-outline.svg';
+import cangreBurgers from '../assets/img/products/cangreburger 2.svg';
+import pizza from '../assets/img/products/pizza 1.svg';
+import empanadas from '../assets/img/products/empanadas 1.svg';
+import snacks from '../assets/img/products/snacks 1.svg';
+import helado from '../assets/img/products/helado 1.svg';
+import bebidas from '../assets/img/products/bebidas 1.svg';
+import iconAddCircle from '../assets/img/icons/add-circle-outline.svg';
 import { Category } from './Category';
 
 export const Categories = () => {

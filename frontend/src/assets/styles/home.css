@@ -1,0 +1,27 @@
+.container-home {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.select-dp-text {
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 2rem 0;
+}
+
+.select-dp-input {
+    background-color: var(--color-input-dark);
+    color: var(--color-white-main);
+    border-radius: .6rem;
+    padding: .6rem;
+}
+
+.select-dp-input:hover {
+    color: var(--color-black-main);
+    background-color: var(--color-nav);
+}

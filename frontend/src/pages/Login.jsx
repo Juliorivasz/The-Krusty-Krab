@@ -1,9 +1,9 @@
-import '../../assets/css/registerUser.css';
+import '../assets/styles/registerUser.css';
 
 import tkk from '/TKK.svg';
 import { useState } from 'react';
-import { RecoveryPassword } from './RecoveryPassword';
-import { FormLogin } from './FormLogin';
+import { RecoveryPassword } from '../admin/RecoveryPassword';
+import { FormLogin } from '../admin/FormLogin';
 
 export const Login = () => {
     const [viewRecovery, setViewRecovery] = useState(true);

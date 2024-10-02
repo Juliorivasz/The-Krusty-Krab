@@ -1,41 +1,34 @@
-import '../../assets/css/dashboard.css';
+import "../assets/styles/dashboard.css";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { NavAdmin } from '../admin/NavAdmin'
-import { RegisterProduct } from '../../components/modal/RegisterProduct';
+import { RegisterProduct } from "../modal/RegisterProduct";
 
-import { SearchProduct } from '../admin/SearchProduct';
-import { Categories } from '../admin/categories';
-import { Products } from '../admin/Products';
-
+import { Categories } from "../admin/categories";
+import { Products } from "../admin/Products";
+import { Header } from "../layouts/Header";
 
 export const Dashboard = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    function openModal() {
-        setIsOpen(true);
-    }
-      
+  function openModal() {
+    setIsOpen(true);
+  }
 
   return (
     <>
-    <div className='body'>
-        <NavAdmin/>
+      <Header />
+      <div className="body">
         <div className="container-dashboard">
-            <main className="main-content">
-                <SearchProduct/>
-                <h1>Categoría</h1>
-                <Categories/>
-                <Products openModal={openModal}/>
-            </main>
+          <main className="main-content">
+            <h1>Categoría</h1>
+            <Categories />
+            <Products openModal={openModal} />
+          </main>
         </div>
         {/* es un modal */}
-        <RegisterProduct 
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-        />
-    </div>
+        <RegisterProduct isOpen={isOpen} setIsOpen={setIsOpen} />
+      </div>
     </>
-  )
-}
+  );
+};

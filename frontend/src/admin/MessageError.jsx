@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import alertIconRed from '../assets/img/icon-alert-red.svg';
+import alertIconRed from '../assets/img/icons/icon-alert-red.svg';
 
 export const MessageError = ({message}) => {
   return (
