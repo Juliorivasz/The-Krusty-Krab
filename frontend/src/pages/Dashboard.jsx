@@ -7,6 +7,7 @@ import { RegisterProduct } from "../modal/RegisterProduct";
 import { Categories } from "../admin/categories";
 import { Products } from "../admin/Products";
 import { Header } from "../layouts/Header";
+import Banner from "../components/banner/Banner";
 
 export const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +19,8 @@ export const Dashboard = () => {
   return (
     <>
       <Header />
+      {/* BANNER */}
+      <Banner />
       <div className="body">
         <div className="container-dashboard">
           <main className="main-content">

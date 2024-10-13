@@ -1,0 +1,113 @@
+.banner {
+    display: flex;
+    flex-direction: row;
+    row-gap: 1.5rem;
+    background-color: #101010;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    box-sizing: border-box;
+}
+
+.banner-top-title {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 700;
+    color: #ffffff;
+    font-style: italic;
+}
+
+.banner-title {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.banner-subtitle {
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: #ffffff;
+}
+
+.banner-img {
+    max-width: 50%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Pantallas pequeñas (sm) */
+@media (min-width: 640px) {
+    .banner-title {
+        font-size: 2.2rem;
+    }
+
+    .banner-top-title {
+        font-size: 1.8rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Pantallas medianas (md) */
+@media (min-width: 768px) {
+    .banner-title {
+        font-size: 2.8rem;
+    }
+
+    .banner-top-title {
+        font-size: 2.2rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* Pantallas grandes (lg) */
+@media (min-width: 1024px) {
+    .banner-title {
+        font-size: 3.5rem;
+    }
+
+    .banner-top-title {
+        font-size: 3rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+/* Pantallas extra grandes (xl) */
+@media (min-width: 1280px) {
+    .banner-title {
+        font-size: 6.2rem;
+    }
+
+    .banner-top-title {
+        font-size: 5rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1.8rem;
+    }
+}
+
+/* Pantallas 2xl (muy grandes) */
+@media (min-width: 1536px) {
+    .banner-title {
+        font-size: 6rem;
+    }
+
+    .banner-top-title {
+        font-size: 4.5rem;
+    }
+
+    .banner-subtitle {
+        font-size: 2rem;
+    }
+}
