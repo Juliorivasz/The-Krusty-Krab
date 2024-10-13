@@ -6,7 +6,7 @@ export default function Banner() {
   return (
     <div className='banner'>
         <div>
-    <h3 className='banner-top-title' style={{paddingBottom: '12px'}}>
+    <h3 className='banner-top-title'>
         NUEVA
     </h3>
     <h2 className="banner-title">
@@ -15,7 +15,7 @@ export default function Banner() {
     <h2 className="banner-title">
         BURGUER
     </h2>
-    <p className="banner-subtitle" style={{paddingTop: '64px'}}>
+    <p className="banner-subtitle">
         ELEGIDAS POR LOS MAS MANIJAS
     </p>
         </div>

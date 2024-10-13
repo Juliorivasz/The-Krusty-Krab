@@ -6,12 +6,12 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem; /* Padding base para pantallas más grandes */
     box-sizing: border-box;
 }
 
 .banner-top-title {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Tamaño base más grande */
     line-height: 1;
     font-weight: 700;
     color: #ffffff;
@@ -19,14 +19,14 @@
 }
 
 .banner-title {
-    font-size: 2rem;
+    font-size: 3rem; /* Tamaño base más grande */
     line-height: 1;
     font-weight: 700;
     color: #ffffff;
 }
 
 .banner-subtitle {
-    font-size: 0.8rem;
+    font-size: 1rem; /* Tamaño base más grande */
     font-weight: 100;
     color: #ffffff;
 }
@@ -37,77 +37,109 @@
     object-fit: contain;
 }
 
+/* Media Queries - Ajustes de padding y tamaño de letra para pantallas más pequeñas */
+
 /* Pantallas pequeñas (sm) */
 @media (min-width: 640px) {
-    .banner-title {
-        font-size: 2.2rem;
+    .banner {
+        padding: 1.5rem;
     }
 
     .banner-top-title {
-        font-size: 1.8rem;
+        font-size: 2.5rem; /* Ajuste del tamaño de letra más grande */
+        padding-bottom: 8px;
+    }
+
+    .banner-title {
+        font-size: 3.5rem; /* Ajuste del tamaño de letra más grande */
     }
 
     .banner-subtitle {
-        font-size: 1rem;
+        font-size: 1.5rem; /* Ajuste del tamaño de letra más grande */
+        padding-top: 48px;
     }
 }
 
 /* Pantallas medianas (md) */
 @media (min-width: 768px) {
-    .banner-title {
-        font-size: 2.8rem;
+    .banner {
+        padding: 1.2rem;
     }
 
     .banner-top-title {
-        font-size: 2.2rem;
+        font-size: 3rem; /* Ajuste del tamaño de letra más grande */
+        padding-bottom: 10px;
+    }
+
+    .banner-title {
+        font-size: 4rem; /* Ajuste del tamaño de letra más grande */
     }
 
     .banner-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.8rem; /* Ajuste del tamaño de letra más grande */
+        padding-top: 56px;
     }
 }
 
 /* Pantallas grandes (lg) */
 @media (min-width: 1024px) {
-    .banner-title {
-        font-size: 3.5rem;
+    .banner {
+        padding: 1.5rem;
     }
 
     .banner-top-title {
-        font-size: 3rem;
+        font-size: 3.5rem; /* Ajuste del tamaño de letra más grande */
+        padding-bottom: 12px;
+    }
+
+    .banner-title {
+        font-size: 4.5rem; /* Ajuste del tamaño de letra más grande */
     }
 
     .banner-subtitle {
-        font-size: 1.5rem;
+        font-size: 2rem; /* Ajuste del tamaño de letra más grande */
+        padding-top: 64px;
     }
 }
 
 /* Pantallas extra grandes (xl) */
 @media (min-width: 1280px) {
-    .banner-title {
-        font-size: 6.2rem;
+    .banner {
+        padding: 2rem;
     }
 
     .banner-top-title {
-        font-size: 5rem;
+        font-size: 4.5rem; /* Ajuste del tamaño de letra más grande */
+        padding-bottom: 12px;
+    }
+
+    .banner-title {
+        font-size: 6rem; /* Ajuste del tamaño de letra más grande */
     }
 
     .banner-subtitle {
-        font-size: 1.8rem;
+        font-size: 2.5rem; /* Ajuste del tamaño de letra más grande */
+        padding-top: 64px;
     }
 }
 
 /* Pantallas 2xl (muy grandes) */
 @media (min-width: 1536px) {
-    .banner-title {
-        font-size: 6rem;
+    .banner {
+        padding: 2.5rem;
     }
 
     .banner-top-title {
-        font-size: 4.5rem;
+        font-size: 5rem; /* Ajuste del tamaño de letra más grande */
+        padding-bottom: 12px;
+    }
+
+    .banner-title {
+        font-size: 7rem; /* Ajuste del tamaño de letra más grande */
     }
 
     .banner-subtitle {
-        font-size: 2rem;
+        font-size: 3rem; /* Ajuste del tamaño de letra más grande */
+        padding-top: 64px;
     }
 }
