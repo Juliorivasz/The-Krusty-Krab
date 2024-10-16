@@ -1,14 +1,28 @@
+
+import PropTypes from 'prop-types';
 import { Product } from "./Product"
 
 
-// eslint-disable-next-line react/prop-types
-export const Products = ({openModal}) => {
+export const Products = ({typeProducts, listProducts}) => {
+
+
   return (
-    <div className="products">
-        <Product/>
-        <div className="add-product-card" onClick={openModal}>
-            <button>+</button>
-        </div>
+    <>
+    <h2 className="typeProduct" id={typeProducts}>{typeProducts}</h2>
+    <div className="container-products">
+      <div className="products">
+        {
+          listProducts.map((product, id)=> (
+            <Product key={id} product={product}/>
+          ))
+        }
+      </div>
     </div>
+    </>
   )
+}
+
+Products.propTypes = {
+  typeProducts: PropTypes.string,
+  listProducts: PropTypes.array
 }

@@ -12,7 +12,7 @@ export const Nav = ({ islogged }) => {
           </Link>
         </li>
         <li>
-          <Link to="#">
+          <Link to="/menu">
             <p>Menu</p>
           </Link>
         </li>

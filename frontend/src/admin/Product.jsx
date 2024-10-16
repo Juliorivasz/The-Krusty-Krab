@@ -1,20 +1,18 @@
 
-import cangreBurgers from '../assets/img/products/cangreburger 2.svg';
-import pencil from '../assets/img/icons/pencil.svg';
-import trash from '../assets/img/icons/trash.svg';
+// import cangreBurgers from '../assets/img/products/cangreburger 2.svg';
 
-export const Product = () => {
+// eslint-disable-next-line react/prop-types
+export const Product = ({product}) => {
+  // eslint-disable-next-line react/prop-types
+  const {image, title, detail, price} = product;
+
   return (
     <div className="product-card">
-            <img src={cangreBurgers} alt="Cangreburger"/>
+            <img src={image} alt="Cangreburger"/>
             <div className="product-info">
-                <h2 className="product-title">Cangreburger simple</h2>
-                <p className="product-description">Pan de papa, medallón de carne, cheddar X2, lechuga, tomate, pepino.</p>
-                <span className="price">$10.000</span>
-            </div>
-            <div className="actions">
-                <button className="edit-btn"><img src={pencil} alt="editar producto"/></button>
-                <button className="delete-btn"><img src={trash} alt="elimnar producto"/></button>
+                <h2 className="product-title">{title}</h2>
+                <p className="product-description">{detail}</p>
+                <span className="price">${price}</span>
             </div>
         </div>
   )

@@ -38,7 +38,7 @@ export const FormLogin = ({viewRecovery, setViewRecovery}) => {
             setIsValidEmail(true);
             setIsValidPassword(true);
             localStorage.setItem('Logged',true);
-            navigate('/admin/home')
+            navigate('/menu')
         }else {
             setIsValidEmail(false);
             setIsValidPassword(false);

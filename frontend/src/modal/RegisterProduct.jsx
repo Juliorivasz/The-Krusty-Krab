@@ -1,3 +1,4 @@
+import '../assets/styles/register-products.css';
 import iconAddCircleWhite from '../assets/img/icons/add-circle-outline-white.svg';
 import iconCloseCircle from '../assets/img/icons/close-circle-outline.svg';
 

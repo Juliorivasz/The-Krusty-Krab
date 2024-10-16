@@ -12,20 +12,28 @@ import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [islogged, setIsLogged] = useState(false);
+  const [flat, setFlat] = useState(localStorage.getItem("departamento"));
 
   useEffect(() => {
     setIsLogged(localStorage.getItem("Logged"));
-  }, []);
+    if (!flat) {
+      setFlat("Capital");
+    }
+  }, [islogged, flat]);
 
   return (
     <header>
       <Logo urlImage={tkk} />
-      <Ubication />
+      <Ubication flat={flat} />
       <div className="container-nav-search">
         <Nav islogged={islogged} />
         <Search />
       </div>
-      {islogged ? <User /> : <Button text="Entrar" redirection="/admin" />}
+      {islogged ? (
+        <User setIsLogged={setIsLogged} />
+      ) : (
+        <Button text="Entrar" redirection="/admin" />
+      )}
     </header>
   );
 };
