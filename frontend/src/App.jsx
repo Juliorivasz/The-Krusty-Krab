@@ -7,6 +7,8 @@ import { AdminRoutes } from './admin/AdminRoutes'
 import { Home } from './pages/Home';
 import NotFound from './pages/errors/notFound';
 import { Menu } from "./pages/Menu";
+import Promociones from './pages/Promociones';
+
 import { Cart } from "./pages/Cart";
 import { OrderHistory } from "./pages/OrderHistory";
 
@@ -23,6 +25,8 @@ function App() {
         <Route path="/orderHistory" element={<OrderHistory />} />
         <Route path="/register" element={<RegisterUser/>}></Route>
         <Route path="/admin/*" element={<AdminRoutes/>}></Route>
+        <Route path="/promociones/" element={<Promociones/>}></Route>
+
     </Routes>
     </>
   )

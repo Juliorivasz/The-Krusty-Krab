@@ -17,7 +17,7 @@ export const Nav = ({ islogged }) => {
           </Link>
         </li>
         <li>
-          <Link to="#">
+          <Link to="/promociones">
             <p>Promociones</p>
           </Link>
         </li>
