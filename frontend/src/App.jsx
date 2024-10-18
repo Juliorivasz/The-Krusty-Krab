@@ -23,6 +23,7 @@ function App() {
         <Route path="/register" element={<RegisterUser />} />
         <Route path="/admin/*" element={<AdminRoutes />} />
         <Route path="/userprofile" element={<UserProfile />} /> {/* Ruta para UserProfile */}
+        <Route path="/promociones" element={<Promociones />} />
         <Route path="*" element={<NotFound />} /> {/* Esta debe ser la última ruta */}
       </Routes>
     </>

@@ -5,7 +5,7 @@ import { Header } from './Header'
 export default function FullWidthLayout({children}) {
   return (
     <div>
-        <Header/>
+        <Header isShow={false}/>
         <div style={{padding:"10rem 1rem 1rem 1rem"}}>{children}</div>
     </div>
   )
