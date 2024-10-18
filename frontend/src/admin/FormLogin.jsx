@@ -25,26 +25,35 @@ export const FormLogin = ({viewRecovery, setViewRecovery}) => {
     }
 
     
+    
 
     const handleLogin = (event) => {
         event.preventDefault();
-        if(credentials.email == email && credentials.password != password){
+        
+        if (credentials.email === email && credentials.password !== password) {
             setIsValidEmail(true);
             setIsValidPassword(false);
-        }else if (credentials.password == password && credentials.email != email) {
+        } else if (credentials.password === password && credentials.email !== email) {
             setIsValidPassword(true);
             setIsValidEmail(false);
-        } else if(credentials.email == email && credentials.password == password ){
+        } else if (credentials.email === email && credentials.password === password) {
             setIsValidEmail(true);
             setIsValidPassword(true);
-            localStorage.setItem('Logged',true);
-            navigate('/menu')
-        }else {
+            
+            // Guardar información en localStorage
+            localStorage.setItem('isLogged', 'true');
+            localStorage.setItem('userEmail', email); // Puedes almacenar más datos si lo deseas
+            localStorage.setItem('username', 'Julio Rivas');
+    
+            navigate('/menu');
+        } else {
             setIsValidEmail(false);
             setIsValidPassword(false);
         }
+    
         return;
-    }
+    };
+    
 
   return (
     <>

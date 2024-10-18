@@ -19,7 +19,6 @@ export const Dashboard = () => {
   return (
     <>
       <Header />
-      {/* BANNER */}
       <Banner />
       <div className="body">
         <div className="container-dashboard">

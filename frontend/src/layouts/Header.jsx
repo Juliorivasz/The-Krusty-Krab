@@ -7,7 +7,7 @@ import { User } from "../components/User";
 import { Ubication } from "../components/Ubication";
 import { Nav } from "./Nav";
 import { Search } from "../components/Search";
-import { Button } from "../components/button";
+import { Button } from "../components/ui/Button";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
@@ -15,7 +15,7 @@ export const Header = () => {
   const [flat, setFlat] = useState(localStorage.getItem("departamento"));
 
   useEffect(() => {
-    setIsLogged(localStorage.getItem("Logged"));
+    setIsLogged(localStorage.getItem("isLogged"));
     if (!flat) {
       setFlat("Capital");
     }
