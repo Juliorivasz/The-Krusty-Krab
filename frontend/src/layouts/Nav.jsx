@@ -23,7 +23,7 @@ export const Nav = ({ islogged }) => {
         </li>
         {islogged ? (
           <li>
-            <Link to="#">
+            <Link to="/orderHistory">
               <p>Pedidos</p>
             </Link>
           </li>

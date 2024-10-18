@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "../assets/styles/header.css";
 
 import tkk from "/TKK.svg";
@@ -11,10 +12,10 @@ import { Button } from "../components/ui/Button";
 import { useEffect, useState } from "react";
 import { EmptyCart } from "../modal/EmptyCart";
 
-export const Header = () => {
+export const Header = ({isShow='true'}) => {
   const [islogged, setIsLogged] = useState(false);
   const [flat, setFlat] = useState(localStorage.getItem("departamento"));
-  const [emptyCartShow, setEmptyCartShow] = useState(true);
+  const [emptyCartShow, setEmptyCartShow] = useState(false);
 
   useEffect(() => {
     setIsLogged(localStorage.getItem("isLogged"));
@@ -24,17 +25,18 @@ export const Header = () => {
   }, [islogged, flat]);
 
   const handleShowEmptyCart = () => {
-    setEmptyCartShow(false);
+    setEmptyCartShow(!emptyCartShow);
   }
 
   return (
     <header>
-      {emptyCartShow ? '' : <EmptyCart/>}
+      <EmptyCart emptyCartShow={emptyCartShow} handleShowEmptyCart={handleShowEmptyCart}/>
       <Logo urlImage={tkk} />
       <Ubication flat={flat} />
       <div className="container-nav-search">
         <Nav islogged={islogged} />
-        <Search />
+        {isShow ? <Search /> : ''}
+        
       </div>
       {islogged ? (
         <User setIsLogged={setIsLogged} handleShowEmptyCart={handleShowEmptyCart}/>

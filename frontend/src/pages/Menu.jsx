@@ -4,12 +4,14 @@ import { Categories } from "../admin/categories";
 import { Products } from "../admin/Products";
 import { Header } from "../layouts/Header";
 import { listProducts } from "../helpers/products";
+import Banner from "../components/banner/Banner";
 
 export const Menu = () => {
   
   return (
     <>
       <Header />
+      <Banner />
       <div className="body">
         <div className="container-menu">
           <main className="main-content">

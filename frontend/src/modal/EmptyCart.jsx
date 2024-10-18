@@ -1,17 +1,34 @@
 import closeModal from '../assets/img/icons/close-circle-outline.svg';
 import cart from '../assets/img/icons/carritoNaranja.svg';
-import { Button } from '../components/button';
+import { Button } from '../components/ui/Button';
+// import { useState } from 'react';
 
+// eslint-disable-next-line react/prop-types
+export const EmptyCart = ({emptyCartShow, handleShowEmptyCart}) => {
 
-export const EmptyCart = () => {
+    // const [isOpen, setIsOpen] = useState(false);
+
+  const toggleCart = () => {
+    handleShowEmptyCart(!emptyCartShow);
+  };
+
   return (
-    <div style={{position: "absolute", backgroundColor: "#005478", top: "70%", right: "9.4%", width: "300px", minHeight: "200px", paddingTop: "0", padding: "1rem", transition: "all 2s ease-in-out"}}>
-        <div style={{display: "flex", justifyContent: "space-between", margin: "1rem", paddingBottom: ".5rem", borderBottom: "2px solid white"}}>
+    <div style={{
+        position: "absolute", 
+        backgroundColor: "#005478", 
+        top: "70%", 
+        right: "9.4%", 
+        width: "300px", 
+        padding: "0",  // El padding solo aparece cuando está abierto
+        height: emptyCartShow ? "250px" : "0",  // Cambiamos la altura para el despliegue
+        overflow: "hidden",  // Oculta el contenido cuando está cerrado
+        transition: "height 1s ease-in-out",}}>
+        <div style={{display: "flex", justifyContent: "space-between", margin: "1rem", paddingBottom: ".5rem", borderBottom: "2px solid white"}} onClick={toggleCart}>
             <p>
                 Mi carrito
             </p>
-            <div style={{width: "30px"}}>
-                <img src={closeModal} alt="Cerrar modal" />
+            <div style={{width: "30px", cursor: "pointer"}}>
+                <img src={closeModal} alt="Cerrar modal" onClick={toggleCart}/>
             </div>
         </div>
         <div style={{display: "flex", justifyContent: "space-around", alignItems: "center"}}>

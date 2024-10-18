@@ -1,0 +1,130 @@
+ 
+ 
+  .orders {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .order-list {
+    width: 100%;
+  }
+
+  .order-list .order {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+  }
+  
+  .order-list .order img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 10px; /* Redondear imagen */
+  }
+  
+  .order h2 {
+    margin-bottom: 5px;
+    font-size: 1.5rem; /* Aumentar tamaño de la fuente */
+  }
+  
+  .order .status {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.2rem; /* Aumentar tamaño del estado */
+  }
+  
+  .order .date {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .delivered .status {
+    color: green;
+  }
+  
+  .canceled .status {
+    color: red;
+  }
+  
+  aside {
+    width: 50%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Altura completa */
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filters h2 {
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+  }
+  
+  .filters h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .filter-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .filters li {
+    margin-bottom: .1rem;
+    font-size: 1.3rem; /* Aumentar tamaño del texto de los filtros */
+  }
+  
+  .filters input[type="radio"] {
+    margin-right: 15px; /* Separación entre el radio y el texto */
+  }
+  
+  #clear-filters {
+    background-color: #043551;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.2rem; /* Aumentar tamaño del botón */
+  }
+  
+  #clear-filters:hover {
+    background-color: #02283c;
+  }
+  .order-list .order img {
+    width: 80px;  /* Tamaño de la imagen */
+    height: 80px; /* Altura de la imagen */
+    margin-right: 20px; /* Separación con el texto */
+    border-radius: 10px; /* Redondear la imagen */
+  }
+
+  nav .logo img {
+    width: 70px;  /* Aumenta el tamaño del logo */
+    height: 70px;
+    margin-right: 10px;  /* Ajusta la separación con el texto */
+}
+
+nav .logo span {
+    font-size: 18px; /* Tamaño del texto 'Enviar a Godoy Cruz' */
+    font-weight: bold; /* Negrita para resaltar */
+    color: white;
+}

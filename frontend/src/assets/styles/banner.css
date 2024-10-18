@@ -126,7 +126,7 @@
 /* Pantallas 2xl (muy grandes) */
 @media (min-width: 1536px) {
     .banner {
-        padding: 2.5rem;
+        padding: 10rem;
     }
 
     .banner-top-title {

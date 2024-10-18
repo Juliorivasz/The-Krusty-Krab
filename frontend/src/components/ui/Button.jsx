@@ -7,11 +7,15 @@ export const Button = ({text='Enviar', redirection='#', color='#000'}) => {
   const navigate = useNavigate();
 
   const goPage = () => {
-    navigate(redirection);
+    if(redirection != '#'){
+      navigate(redirection);
+    }else {
+      window.location.reload();
+    }
   }
 
   return (
-    <div>
+    <div style={{padding: "0 .5rem"}}>
         <button style={{color: color}} onClick={goPage}>{text}</button>
     </div>
   )

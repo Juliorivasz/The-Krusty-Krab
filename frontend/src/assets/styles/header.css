@@ -6,8 +6,8 @@ header {
     align-items: center;
     justify-content: space-around;
     max-height: 150px;
-    position: relative;
-    /* overflow: hidden; */
+    width: 100%;
+    position: fixed;
 }
 
 .container-nav-search {
@@ -58,7 +58,7 @@ nav {
     display: flex;
     justify-content: space-between; /* Alinea los elementos entre sí */
     align-items: center; /* Alinea verticalmente */
-    width: auto; /* Cambié de 15% a 'auto' para ajustarse al contenido */
+    width: 15%; /* Cambié de 15% a 'auto' para ajustarse al contenido */
     gap: 15px; /* Espacio entre los iconos */
 }
 
@@ -66,6 +66,10 @@ nav {
 .cart {
     width: 30px; /* Mantener el mismo tamaño */
     height: 30px; /* Mantener el mismo tamaño */
+}
+
+.cart:hover {
+    cursor: pointer;
 }
 
 .profile {
