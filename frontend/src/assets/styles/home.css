@@ -19,9 +19,10 @@
     color: var(--color-white-main);
     border-radius: .6rem;
     padding: .6rem;
+    transition: all .2s ease-in-out;
 }
 
 .select-dp-input:hover {
     color: var(--color-black-main);
-    background-color: var(--color-nav);
+    background-color: var(--color-button);
 }

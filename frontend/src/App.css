@@ -21,3 +21,7 @@ dialog {
   overflow: auto;
   border: none;
 }
+
+html {
+  scroll-behavior: smooth;
+}
