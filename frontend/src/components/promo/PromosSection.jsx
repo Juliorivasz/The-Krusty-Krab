@@ -1,8 +1,7 @@
-import React from 'react'
 import ProductCard from '../ProductCard'
 import { promociones } from '../../helpers/promos'
 
-export default function () {
+export default function PromosSection() {
    
   return (
     <div className='grid grid-cols-2 gap-4

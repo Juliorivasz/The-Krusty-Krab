@@ -1,4 +1,3 @@
-import React from 'react'
 import FullWidthLayout from '../layouts/FullWidthLayout'
 import Cupones from '../components/promo/cupones'
 import PromosSection from '../components/promo/PromosSection'
