@@ -1,30 +1,32 @@
 import notification from "../assets/img/icons/campana.svg";
 import userImg from "../assets/img/icons/user.svg";
 import cart from "../assets/img/icons/carrito.svg";
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import { ProfileDropDown } from "../modal/ProfileDropDown.jsx"; // Importa el menú desplegable
 
-// import { useNavigate } from "react-router-dom";
+export const User = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Manejo del estado del menú
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Alterna el estado del menú
+  };
 
-export const User = ({setIsLogged, handleShowEmptyCart}) => {
-
-  // const navigate = useNavigate();
-
-  const userOut = () => {
-    setIsLogged(false);
-    localStorage.removeItem("Logged");
-  }
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false); // Cierra el menú
+  };
 
   return (
     <div className="container-notify-cart-profile">
       <div className="notification">
-        <img src={notification} alt="Notificacion" />
+        <img src={notification} alt="Notificación" />
       </div>
       <div className="cart" onClick={handleShowEmptyCart}>
         <img src={cart} alt="Carrito" />
       </div>
-      <div className="profile" onClick={userOut} title="salir">
-        <img src={userImg} alt="Usuario"/>
+      <div className="profile" onClick={toggleMenu}>
+        <img src={userImg} alt="Usuario" />
       </div>
+      {/* Mostrar menú desplegable solo si está abierto */}
+      {isMenuOpen && <ProfileDropDown onClose={handleCloseMenu} />}
     </div>
   );
 };
@@ -32,5 +34,4 @@ export const User = ({setIsLogged, handleShowEmptyCart}) => {
 
 User.propTypes = {
   setIsLogged: PropTypes.func.isRequired,
-  handleShowEmptyCart: PropTypes.func,
 }

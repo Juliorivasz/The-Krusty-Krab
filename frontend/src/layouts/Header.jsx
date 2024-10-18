@@ -7,7 +7,7 @@ import { User } from "../components/User";
 import { Ubication } from "../components/Ubication";
 import { Nav } from "./Nav";
 import { Search } from "../components/Search";
-import { Button } from "../components/button";
+import { Button } from "../components/ui/Button";
 import { useEffect, useState } from "react";
 import { EmptyCart } from "../modal/EmptyCart";
 
@@ -17,7 +17,7 @@ export const Header = () => {
   const [emptyCartShow, setEmptyCartShow] = useState(true);
 
   useEffect(() => {
-    setIsLogged(localStorage.getItem("Logged"));
+    setIsLogged(localStorage.getItem("isLogged"));
     if (!flat) {
       setFlat("Capital");
     }

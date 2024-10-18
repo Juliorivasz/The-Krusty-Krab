@@ -45,8 +45,7 @@ nav {
     font-size: 1.2rem;
 }
 
-
-.search-bar:focus{
+.search-bar:focus {
     background-image: none;
     padding: 10px;
 }
@@ -57,18 +56,24 @@ nav {
 
 .container-notify-cart-profile {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 15%;
+    justify-content: space-between; /* Alinea los elementos entre sí */
+    align-items: center; /* Alinea verticalmente */
+    width: auto; /* Cambié de 15% a 'auto' para ajustarse al contenido */
+    gap: 15px; /* Espacio entre los iconos */
 }
 
-.notification {
-    width: 30px;
-    height: 30px;
+.notification,
+.cart {
+    width: 30px; /* Mantener el mismo tamaño */
+    height: 30px; /* Mantener el mismo tamaño */
 }
 
-.cart, .profile {
-    width: 40px;
-    height: 40px;
+.profile {
+    position: relative; /* Permite que el menú desplegable se posicione correctamente */
+    cursor: pointer; /* Muestra que se puede hacer clic */
 }
 
+.profile img {
+    width: 30px; /* Tamaño coherente con los otros iconos */
+    height: 30px; /* Tamaño coherente con los otros iconos */
+}

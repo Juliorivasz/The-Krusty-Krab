@@ -1,0 +1,54 @@
+.profile-dropdown-container {
+  position: relative; /* Para posicionar el menú de forma absoluta */
+}
+
+.profile-dropdown {
+  position: fixed; /* Se posiciona de forma fija para cubrir toda la pantalla */
+  right: 0; /* Alineado a la derecha */
+  top: 0; /* Desde el top de la pantalla */
+  width: 33.33%; /* Un tercio de la pantalla */
+  height: 100%; /* Abarca toda la altura */
+  background-color: rgba(0, 84, 120, 0.9); /* Fondo con HEX 005478 y opacidad del 90% */
+  color: white;
+  border-left: 1px solid #ccc; /* Borde a la izquierda */
+  padding: 20px; /* Padding interior */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+.profile-header {
+  text-align: center; /* Centra la imagen y el nombre */
+  margin-bottom: 20px; /* Espacio inferior */
+}
+
+.profile-image {
+  width: 80px; /* Tamaño de la imagen */
+  height: 80px; /* Tamaño de la imagen */
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+  margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+.links-container {
+  margin-bottom: 20px; /* Espacio inferior */
+}
+
+.profile-link {
+  color: white; /* Color del texto de los hipervínculos */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.divider {
+  height: 1px; /* Alto de la línea divisoria */
+  background-color: #ccc; /* Color de la línea divisoria */
+  margin: 5px 0; /* Espacio alrededor de la línea */
+}
+
+.logout-button {
+  background-color: #F89604; /* Color del fondo */
+  color: black; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Muestra que se puede hacer clic */
+  padding: 10px; /* Espacio interior */
+  width: 100%; /* Ancho completo */
+}
