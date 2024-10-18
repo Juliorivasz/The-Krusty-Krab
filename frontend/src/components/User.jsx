@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // import { useNavigate } from "react-router-dom";
 
-export const User = ({setIsLogged}) => {
+export const User = ({setIsLogged, handleShowEmptyCart}) => {
 
   // const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ export const User = ({setIsLogged}) => {
       <div className="notification">
         <img src={notification} alt="Notificacion" />
       </div>
-      <div className="cart">
+      <div className="cart" onClick={handleShowEmptyCart}>
         <img src={cart} alt="Carrito" />
       </div>
       <div className="profile" onClick={userOut} title="salir">
@@ -32,4 +32,5 @@ export const User = ({setIsLogged}) => {
 
 User.propTypes = {
   setIsLogged: PropTypes.func.isRequired,
+  handleShowEmptyCart: PropTypes.func,
 }

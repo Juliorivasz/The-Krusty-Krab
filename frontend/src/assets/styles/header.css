@@ -6,7 +6,8 @@ header {
     align-items: center;
     justify-content: space-around;
     max-height: 150px;
-    overflow: hidden;
+    position: relative;
+    /* overflow: hidden; */
 }
 
 .container-nav-search {

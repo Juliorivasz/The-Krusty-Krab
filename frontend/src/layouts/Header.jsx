@@ -9,10 +9,12 @@ import { Nav } from "./Nav";
 import { Search } from "../components/Search";
 import { Button } from "../components/button";
 import { useEffect, useState } from "react";
+import { EmptyCart } from "../modal/EmptyCart";
 
 export const Header = () => {
   const [islogged, setIsLogged] = useState(false);
   const [flat, setFlat] = useState(localStorage.getItem("departamento"));
+  const [emptyCartShow, setEmptyCartShow] = useState(true);
 
   useEffect(() => {
     setIsLogged(localStorage.getItem("Logged"));
@@ -21,8 +23,13 @@ export const Header = () => {
     }
   }, [islogged, flat]);
 
+  const handleShowEmptyCart = () => {
+    setEmptyCartShow(false);
+  }
+
   return (
     <header>
+      {emptyCartShow ? '' : <EmptyCart/>}
       <Logo urlImage={tkk} />
       <Ubication flat={flat} />
       <div className="container-nav-search">
@@ -30,7 +37,7 @@ export const Header = () => {
         <Search />
       </div>
       {islogged ? (
-        <User setIsLogged={setIsLogged} />
+        <User setIsLogged={setIsLogged} handleShowEmptyCart={handleShowEmptyCart}/>
       ) : (
         <Button text="Entrar" redirection="/admin" />
       )}
