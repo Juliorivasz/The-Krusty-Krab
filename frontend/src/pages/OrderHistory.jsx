@@ -12,7 +12,7 @@ export const OrderHistory = () => {
     <Header isShow={isShow}/>
     <section>
         <div style={{padding: "10rem 1rem 1rem 2rem"}}>
-            <h2>
+            <h2 className='text-3xl font-bold'>
                 Mis pedidos
             </h2>
             <div className='orders'>
