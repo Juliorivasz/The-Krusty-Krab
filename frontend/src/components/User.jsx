@@ -1,30 +1,21 @@
 import notification from "../assets/img/icons/campana.svg";
 import userImg from "../assets/img/icons/user.svg";
 import cart from "../assets/img/icons/carrito.svg";
-import PropTypes from 'prop-types';
 
-// import { useNavigate } from "react-router-dom";
-
-export const User = ({setIsLogged}) => {
-
-  // const navigate = useNavigate();
-
-  const userOut = () => {
-    setIsLogged(false);
-    localStorage.removeItem("Logged");
-  }
-
+export const User = () => {
   return (
     <div className="container-notify-cart-profile">
       <div className="notification">
-        <img src={notification} alt="Notificacion" />
+        <img src={notification} alt="Notificación" />
       </div>
       <div className="cart">
         <img src={cart} alt="Carrito" />
       </div>
-      <div className="profile" onClick={userOut} title="salir">
-        <img src={userImg} alt="Usuario"/>
+      <div className="profile">
+        <img src={userImg} alt="Usuario" />
       </div>
+      {/* Mostrar menú desplegable solo si está abierto */}
+      {isMenuOpen && <ProfileDropDown onClose={handleCloseMenu} />}
     </div>
   );
 };

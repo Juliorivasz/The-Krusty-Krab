@@ -7,7 +7,7 @@ import { User } from "../components/User";
 import { Ubication } from "../components/Ubication";
 import { Nav } from "./Nav";
 import { Search } from "../components/Search";
-import { Button } from "../components/ui/button";
+import { Button } from "../components/button";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
