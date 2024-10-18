@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types"; // Importa PropTypes
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import "../../src/assets/styles/ProfileDropDown.css";
 import userImage from "../../src/assets/img/icons/user.svg"; // Importar la imagen
 
 export const ProfileDropDown = ({ onClose }) => {
   const dropdownRef = useRef(null); // Referencia para el contenedor del menú
   const [username, setUsername] = useState(localStorage.getItem('username'));
- 
+  const navigate = useNavigate(); // Inicializa useNavigate
 
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -18,7 +19,12 @@ export const ProfileDropDown = ({ onClose }) => {
     localStorage.removeItem('isLogged');
     localStorage.removeItem('email');
     window.location.reload();
-  }
+  };
+
+  const handleLinkClick = (path) => {
+    navigate(path); // Navega a la ruta especificada
+    onClose(); // Cierra el menú después de navegar
+  };
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside); // Añadir el evento de clic al documento
@@ -35,11 +41,11 @@ export const ProfileDropDown = ({ onClose }) => {
           <p className="username">{username}</p>
         </div>
         <div className="links-container">
-          <a href="#" className="profile-link">Editar Perfil</a>
+          <a className="profile-link" onClick={() => handleLinkClick('/userprofile')}>Editar Perfil</a>
           <div className="divider"></div>
-          <a href="#" className="profile-link">Mis Direcciones</a>
+          <a className="profile-link" onClick={() => handleLinkClick('/userprofile')}>Mis Direcciones</a>
           <div className="divider"></div>
-          <a href="#" className="profile-link">Mis Métodos de Pago</a>
+          <a className="profile-link" onClick={() => handleLinkClick('/userprofile')}>Mis Métodos de Pago</a>
         </div>
         <button className="logout-button" onClick={handleLoggout}>Cerrar sesión</button>
       </div>

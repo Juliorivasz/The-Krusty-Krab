@@ -1,27 +1,25 @@
-import './App.css'
-
-
+import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { RegisterUser } from './pages/RegisterUser';
-import { AdminRoutes } from './admin/AdminRoutes'
+import { AdminRoutes } from './admin/AdminRoutes';
 import { Home } from './pages/Home';
 import NotFound from './pages/errors/notFound';
 import { Menu } from "./pages/Menu";
-
+import { UserProfile } from './pages/UserProfile'; // Importa el componente UserProfile
 
 function App() {
-
   return (
     <>
-    <Routes>
-        <Route path="*" element={<NotFound/>}></Route>
-        <Route path="/" element={<Home/>}></Route>
+      <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/register" element={<RegisterUser/>}></Route>
-        <Route path="/admin/*" element={<AdminRoutes/>}></Route>
-    </Routes>
+        <Route path="/register" element={<RegisterUser />} />
+        <Route path="/admin/*" element={<AdminRoutes />} />
+        <Route path="/userprofile" element={<UserProfile />} /> {/* Ruta para UserProfile */}
+        <Route path="*" element={<NotFound />} /> {/* Esta debe ser la última ruta */}
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

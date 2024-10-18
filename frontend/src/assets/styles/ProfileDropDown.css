@@ -17,7 +17,11 @@
 }
 
 .profile-header {
-  text-align: center; /* Centra la imagen y el nombre */
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en columna */
+  align-items: center; /* Centra la imagen y el texto horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  text-align: center; /* Alineación centrada */
   margin-bottom: 20px; /* Espacio inferior */
 }
 
@@ -26,6 +30,15 @@
   height: 80px; /* Tamaño de la imagen */
   border-radius: 50%; /* Hace que la imagen sea redonda */
   margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+.username {
+  font-size: 18px; /* Ajusta el tamaño del texto */
+  font-weight: bold; /* Negrita para el nombre */
+  margin: 0; /* Elimina cualquier margen extra */
+  white-space: nowrap; /* Evita que el nombre se divida en dos líneas */
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+  text-overflow: ellipsis; /* Si el nombre es demasiado largo, agrega puntos suspensivos */
 }
 
 .links-container {
