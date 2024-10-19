@@ -91,7 +91,7 @@ export const FormLogin = ({viewRecovery, setViewRecovery}) => {
 
                 <div className="signup-section">
                     <p>¿Todavía no tienes una cuenta?</p>
-                    <Link className="create-account-btn" to="/registerU">Crea una ahora</Link>
+                    <Link className="create-account-btn" to="/register">Crea una ahora</Link>
                 </div>
         </div> 
     </>
