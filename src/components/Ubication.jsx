@@ -1,12 +1,14 @@
+import PinDropIcon from '@mui/icons-material/PinDrop';
 import PropTypes from "prop-types";
 
 export const Ubication = ({ flat }) => {
   return (
-    <div>
-      <a>
-        <p>Enviar a:</p>
-        <span>{flat}</span>
-      </a>
+    <div className="ubication">
+        <p className="enviar-a">Enviar a:</p>
+        <div className='iconUbi'>
+          <PinDropIcon/>
+          <span>{flat}</span>
+        </div>
     </div>
   );
 };

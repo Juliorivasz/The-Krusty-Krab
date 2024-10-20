@@ -19,10 +19,10 @@ export const EmptyCart = ({emptyCartShow, handleShowEmptyCart}) => {
         top: "70%", 
         right: "9.4%", 
         width: "300px", 
-        padding: "0",  // El padding solo aparece cuando está abierto
-        height: emptyCartShow ? "250px" : "0",  // Cambiamos la altura para el despliegue
-        overflow: "hidden",  // Oculta el contenido cuando está cerrado
-        transition: "height 1s ease-in-out",}}>
+        padding: "0",
+        height: emptyCartShow ? "250px" : "0",
+        overflow: "hidden",
+        transition: "height .3s ease-in-out",}}>
         <div style={{display: "flex", justifyContent: "space-between", margin: "1rem", paddingBottom: ".5rem", borderBottom: "2px solid white"}} onClick={toggleCart}>
             <p>
                 Mi carrito

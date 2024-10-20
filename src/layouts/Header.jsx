@@ -11,6 +11,7 @@ import { Search } from "../components/Search";
 import { Button } from "../components/ui/Button";
 import { useEffect, useState } from "react";
 import { EmptyCart } from "../modal/EmptyCart";
+import MenuBar from "../components/MenuBar";
 
 export const Header = ({isShow='true'}) => {
   const [islogged, setIsLogged] = useState(false);
@@ -33,6 +34,7 @@ export const Header = ({isShow='true'}) => {
       <EmptyCart emptyCartShow={emptyCartShow} handleShowEmptyCart={handleShowEmptyCart}/>
       <Logo urlImage={tkk} />
       <Ubication flat={flat} />
+      <MenuBar/>
       <div className="container-nav-search">
         <Nav islogged={islogged} />
         {isShow ? <Search /> : ''}

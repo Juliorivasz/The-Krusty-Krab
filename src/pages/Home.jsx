@@ -26,9 +26,9 @@ export const Home = () => {
       <Logo w="300" h="300" />
       <div>
         <p className="select-dp-text">Selecciona tu departamento</p>
-        <ul>
+        <ul className="list-flat">
           {flats.map((depa, id) => (
-            <li key={id}>
+            <li key={id} className="item-flat">
               <Link
                 to="/menu"
                 className="select-dp-input"
