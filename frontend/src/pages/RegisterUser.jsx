@@ -1,5 +1,4 @@
 import "../assets/styles/registerUser.css";
-
 import tkk from "/TKK.svg";
 import logoFace from "../assets/img/logos/logo-face.png";
 import logoGoogle from "../assets/img/logos/circle-g-google-google-new-google-icon-825017.png";
@@ -27,7 +26,7 @@ export const RegisterUser = () => {
 
   const registerSubmit = (event) => {
     event.preventDefault();
-    if (password == ConfirmPassword) {
+    if (password === ConfirmPassword) {
       setUser((prevData) => ({
         ...prevData,
         ["nombre"]: nombre,
