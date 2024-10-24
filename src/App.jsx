@@ -1,11 +1,11 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import { RegisterUser } from './pages/RegisterUser';
+import { Route, Routes } from 'react-router-dom';
 import { AdminRoutes } from './admin/AdminRoutes';
-import { Home } from './pages/Home';
+import './App.css';
 import NotFound from './pages/errors/notFound';
+import { Home } from './pages/Home';
 import { Menu } from "./pages/Menu";
 import Promociones from './pages/Promociones';
+import { RegisterUser } from './pages/RegisterUser';
 
 import { Cart } from "./pages/Cart";
 import { OrderHistory } from "./pages/OrderHistory";

@@ -2,10 +2,10 @@ import "../assets/styles/dashboard.css";
 
 import { Categories } from "../admin/categories";
 import { Products } from "../admin/Products";
-import { Header } from "../layouts/Header";
-import { listProducts } from "../helpers/products";
 import Banner from "../components/banner/Banner";
-
+import { listProducts } from "../helpers/products";
+import Footer from "../layouts/Footer";
+import { Header } from "../layouts/Header";
 export const Menu = () => {
   
   return (
@@ -26,6 +26,7 @@ export const Menu = () => {
           </main>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
