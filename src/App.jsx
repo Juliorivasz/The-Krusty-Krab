@@ -7,10 +7,10 @@ import { Menu } from "./pages/Menu";
 import Promociones from './pages/Promociones';
 import { RegisterUser } from './pages/RegisterUser';
 
-import { Cart } from "./pages/Cart";
 import { OrderHistory } from "./pages/OrderHistory";
 
-import { UserProfile } from './pages/UserProfile'; // Importa el componente UserProfile
+import { UserProfile } from './pages/UserProfile';
+import StepperPay from './components/StepperPay';
 
 function App() {
   return (
@@ -18,13 +18,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<StepperPay />} />
         <Route path="/orderHistory" element={<OrderHistory />} />
         <Route path="/register" element={<RegisterUser />} />
         <Route path="/admin/*" element={<AdminRoutes />} />
-        <Route path="/userprofile" element={<UserProfile />} /> {/* Ruta para UserProfile */}
+        <Route path="/userprofile" element={<UserProfile />} />
         <Route path="/promociones" element={<Promociones />} />
-        <Route path="*" element={<NotFound />} /> {/* Esta debe ser la última ruta */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import closeModal from '../assets/img/icons/close-circle-outline.svg'; 
 
 export const Notification = ({ notifications, handleShowNotifications, showNotifications }) => {
@@ -10,16 +11,16 @@ return (
     <div style={{
         position: "absolute",
         backgroundColor: "#005478", 
-        top: "20%",
-        right: "5%",
+        top: "65%",
+        right: "12%",
         width: "320px",
         padding: "0",
         height: showNotifications ? "400px" : "0", // despliegue
         overflow: "hidden",
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
         borderRadius: "8px",
-        transition: "height 1s ease-in-out",
-        zIndex: 1000
+        transition: "height .5s ease-in-out",
+        zIndex: 3
     }}>
     <div style={{
         display: "flex",

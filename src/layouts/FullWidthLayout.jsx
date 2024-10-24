@@ -6,13 +6,10 @@ export default function FullWidthLayout({children}) {
   return (
     <div className="flex flex-col min-h-screen">
       {<Header isShow={false}/>}
-      <main className="flex-grow">
+      <main className="flex-grow" style={{paddingTop: "10rem"}}>
         {children}
       </main>
       <Footer />
     </div>
   )
 }
-
-/*<Header isShow={false}/>
-        <div style={{padding:"10rem 1rem 1rem 1rem"}}>{children}</div>*/

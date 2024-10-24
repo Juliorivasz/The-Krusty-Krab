@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export const Nav = ({ islogged }) => {
 
   return (
-    <nav>
-      <ul>
+    <nav className="nav-menu">
+      <ul className="list-nav">
         <li>
           <Link to="/">
             <p>Inicio</p>

@@ -39,7 +39,7 @@ export const Search = () => {
           <ul>
             {filteredProducts.map((product, index) => (
               <li key={index} className="search-item">
-                <img src={product.image} alt={product.title} className="search-item-image" />
+                <div className='container-img-search-item'><img src={product.image} alt={product.title} className="search-item-image" /></div>
                 <div className="search-item-details">
                   <div className="search-item-info">
                     <span className="search-item-name">{product.title}</span>
