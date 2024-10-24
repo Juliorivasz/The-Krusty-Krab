@@ -7,10 +7,10 @@ import NotFound from './pages/errors/notFound';
 import { Menu } from "./pages/Menu";
 import Promociones from './pages/Promociones';
 
-import { Cart } from "./pages/Cart";
 import { OrderHistory } from "./pages/OrderHistory";
 
-import { UserProfile } from './pages/UserProfile'; // Importa el componente UserProfile
+import { UserProfile } from './pages/UserProfile';
+import StepperPay from './components/StepperPay';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<StepperPay />} />
         <Route path="/orderHistory" element={<OrderHistory />} />
         <Route path="/register" element={<RegisterUser />} />
         <Route path="/admin/*" element={<AdminRoutes />} />
