@@ -6,8 +6,9 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1.5rem; /* Padding base para pantallas más grandes */
+    padding: 0 10rem 2rem 2rem;
     box-sizing: border-box;
+    padding-top: 10rem;
 }
 
 .banner-top-title {
@@ -43,6 +44,7 @@
 @media (min-width: 640px) {
     .banner {
         padding: 1.5rem;
+        padding-top: 10rem;
     }
 
     .banner-top-title {
@@ -64,6 +66,7 @@
 @media (min-width: 768px) {
     .banner {
         padding: 1.2rem;
+        padding-top: 10rem;
     }
 
     .banner-top-title {
@@ -85,6 +88,7 @@
 @media (min-width: 1024px) {
     .banner {
         padding: 1.5rem;
+        padding-top: 10rem;
     }
 
     .banner-top-title {
@@ -106,6 +110,7 @@
 @media (min-width: 1280px) {
     .banner {
         padding: 2rem;
+        padding-top: 10rem;
     }
 
     .banner-top-title {
@@ -127,6 +132,7 @@
 @media (min-width: 1536px) {
     .banner {
         padding: 10rem;
+        padding-top: 10rem;
     }
 
     .banner-top-title {

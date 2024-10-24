@@ -1,0 +1,23 @@
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* Ajusta la altura según tus necesidades */
+  text-align: center;
+  color: #888; /* Color gris para el texto */
+  background-color: #f9f9f9; /* Fondo claro */
+  border: 1px dashed #ccc; /* Borde punteado */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  margin: 20px 0; /* Espaciado externo */
+}
+
+.cart-empty h2 {
+  font-size: 1.5rem; /* Tamaño de fuente para el título */
+  margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.cart-empty p {
+  font-size: 1rem; /* Tamaño de fuente para el mensaje */
+}

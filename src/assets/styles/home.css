@@ -26,3 +26,13 @@
     color: var(--color-black-main);
     background-color: var(--color-button);
 }
+
+.list-flat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item-flat{
+    margin: .5rem;
+}

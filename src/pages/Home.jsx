@@ -23,12 +23,12 @@ export const Home = () => {
   return (
     <div className="container-home">
       <h1>Bienvenido a:</h1>
-      <Logo w="300" h="300" />
+      <Logo w="300" h="300" display="block"/>
       <div>
         <p className="select-dp-text">Selecciona tu departamento</p>
-        <ul>
+        <ul className="list-flat">
           {flats.map((depa, id) => (
-            <li key={id}>
+            <li key={id} className="item-flat">
               <Link
                 to="/menu"
                 className="select-dp-input"
