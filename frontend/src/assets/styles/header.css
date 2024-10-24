@@ -6,8 +6,10 @@ header {
     align-items: center;
     justify-content: space-around;
     max-height: 150px;
-    overflow: hidden;
+    overflow: visible; /* Esto permite que los resultados de búsqueda se vean fuera del header */
+    z-index: 1; /* Mantiene el header en un nivel bajo pero visible */
 }
+
 
 .container-nav-search {
     display: flex;
