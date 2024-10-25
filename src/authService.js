@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, signInWithPopup } from "firebase/auth";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, signInWithPopup, sendPasswordResetEmail } from "firebase/auth";
 import { auth, googleProvider, facebookProvider } from "./firebaseConfig";
 
 // Registro con email y contraseña
@@ -24,4 +24,9 @@ export const loginWithFacebook = () => {
 // Cerrar sesión
 export const logout = () => {
   return signOut(auth);
+};
+
+// enviar un correo para recuperar la contraseña
+export const resetPassword = async (email) => {
+  return await sendPasswordResetEmail(auth, email);
 };

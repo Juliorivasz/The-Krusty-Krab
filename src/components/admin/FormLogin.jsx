@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MessageError } from "./MessageError";
-import logoFace from '../../assets/img/logos/logo-face.png';
-import logoGoogle from '../../assets/img/logos/circle-g-google-google-new-google-icon-825017.png';
+import logoFace from '../../assets/img/icons/facebook.svg';
+import logoGoogle from '../../assets/img/logos/Google.svg';
 import eyeIcon from '../../assets/img/icons/eye.svg';
 import eyeWhiteIcon from '../../assets/img/icons/eye-white.svg';
-import useAuth from '../auth/useAuth'; // Asegúrate de que la ruta sea correcta
+import useAuth from '../auth/useAuth';
 
 export const FormLogin = ({ viewRecovery, setViewRecovery }) => {
   const [email, setEmail] = useState('');
@@ -21,12 +21,16 @@ export const FormLogin = ({ viewRecovery, setViewRecovery }) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     await handleLogin(email, password);
+  };
+
+  useEffect(() => {
     if (authSuccess) {
       localStorage.setItem('isLogged', 'true');
       localStorage.setItem('userEmail', email);
+      console.log('Se inició sesión');
       navigate("/menu");
     }
-  };
+  }, [authSuccess, email, navigate]);
 
   return (
     <div className="cont-form" id="login-form">
@@ -38,7 +42,7 @@ export const FormLogin = ({ viewRecovery, setViewRecovery }) => {
         <div style={{ position: "relative" }}>
           <input type={showPass ? "text" : "password"} id="password" name="password" onChange={(event) => setPassword(event.target.value)} required />
           <div
-            style={{ width: "20px", height: "20px", position: "absolute", top: "13%", right: "3%", cursor: "pointer" }}
+            style={{ width: "20px", height: "20px", position: "absolute", top: "20%", right: "3%", cursor: "pointer" }}
             onClick={() => setShowPass(!showPass)}
             >
             <img src={showPass ? eyeWhiteIcon : eyeIcon} alt="ver contraseña" />
@@ -69,3 +73,4 @@ export const FormLogin = ({ viewRecovery, setViewRecovery }) => {
     </div>
   );
 };
+

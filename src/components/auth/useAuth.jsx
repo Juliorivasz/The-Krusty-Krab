@@ -6,8 +6,11 @@ import {
   loginWithFacebook, 
   logout 
 } from "../../authService";
+import { useNavigate } from "react-router-dom";
+
 
 const useAuth = () => {
+  const navigate = useNavigate();
   const [authError, setAuthError] = useState(null);
   const [authSuccess, setAuthSuccess] = useState(null);
 
@@ -37,8 +40,11 @@ const useAuth = () => {
 
   const handleGoogleLogin = async () => {
     try {
-      await loginWithGoogle();
+      const userGoogle = await loginWithGoogle();
       setAuthSuccess("Inicio de sesión con Google exitoso.");
+      localStorage.setItem('isLogged', 'true');
+      localStorage.setItem('userEmail', userGoogle.user.email);
+      navigate("/menu");
       setAuthError(null);
     } catch (error) {
       console.error("Error con Google:", error);

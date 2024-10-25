@@ -1,7 +1,7 @@
 import "../../assets/styles/registerUser.css";
 import tkk from "/TKK.svg";
-import logoFace from "../../assets/img/logos/logo-face.png";
-import logoGoogle from "../../assets/img/logos/circle-g-google-google-new-google-icon-825017.png";
+import logoFace from "../../assets/img/icons/facebook.svg";
+import logoGoogle from "../../assets/img/logos/Google.svg";
 import eyeIcon from "../../assets/img/icons/eye.svg";
 import eyeWhiteIcon from "../../assets/img/icons/eye-white.svg";
 import { Link } from "react-router-dom";
