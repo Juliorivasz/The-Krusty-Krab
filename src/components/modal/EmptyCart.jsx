@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import closeModal from "../assets/img/icons/close-circle-outline.svg";
-import cart from "../assets/img/icons/carritoNaranja.svg";
-import { Button } from "../components/ui/Button";
-import CounterUnits from "../components/counterUnits";
-import trash from "../assets/img/icons/trash.svg";
+import closeModal from "../../assets/img/icons/close-circle-outline.svg";
+import cart from "../../assets/img/icons/carritoNaranja.svg";
+import { Button } from "../ui/Button";
+import CounterUnits from "../counterUnits";
+import trash from "../../assets/img/icons/trash.svg";
 
 export const EmptyCart = ({
   emptyCartShow,

@@ -3,7 +3,7 @@ import userImg from "../assets/img/icons/user.svg";
 import cart from "../assets/img/icons/carrito.svg";
 import PropTypes from 'prop-types';
 import { useState } from "react";
-import { ProfileDropDown } from "../modal/ProfileDropDown.jsx"; // Importa el menú desplegable
+import { ProfileDropDown } from "./modal/ProfileDropDown.jsx"; // Importa el menú desplegable
 
 export const User = ({handleShowEmptyCart,showNotifications, setShowNotifications}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Manejo del estado del menú

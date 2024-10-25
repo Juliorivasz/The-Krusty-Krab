@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import "../assets/styles/home.css";
+import "../../assets/styles/home.css";
 
-import { Logo } from "../components/Logo";
+import { Logo } from "../Logo";
 import { useState } from "react";
 
 export const Home = () => {

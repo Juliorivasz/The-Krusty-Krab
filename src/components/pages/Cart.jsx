@@ -3,7 +3,7 @@ import { Card, CardMedia, CardContent, Typography, IconButton, Box, TextField } 
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import '../assets/styles/cart.css';
+import '../../assets/styles/cart.css';
 
 export const Cart = () => {
   const [cart, setCart] = useState([]);

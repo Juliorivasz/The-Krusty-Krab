@@ -7,8 +7,8 @@ import {
   Checkbox,
   FormControlLabel,
 } from '@mui/material';
-import mercadoPagoLogo from '../assets/img/logos/mercadoPagoLogo.svg';
-import binanceLogo from '../assets/img/logos/binanceLogo.svg';
+import mercadoPagoLogo from '../../assets/img/logos/mercadoPagoLogo.svg';
+import binanceLogo from '../../assets/img/logos/binanceLogo.svg';
 
 const AddressPayment = () => {
   const [addresses, setAddresses] = useState([]);

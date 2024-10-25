@@ -1,4 +1,4 @@
-import '../assets/styles/orderHistory.css';
+import '../../assets/styles/orderHistory.css';
 import logo from '/TKK.svg'
 import { useState } from "react"
 import { Header } from "../layouts/Header"

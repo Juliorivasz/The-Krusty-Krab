@@ -1,4 +1,4 @@
-import '../assets/styles/registerUser.css';
+import '../../assets/styles/registerUser.css';
 
 import tkk from '/TKK.svg';
 import { useState } from 'react';

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types"; // Importa PropTypes
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
-import "../../src/assets/styles/ProfileDropDown.css";
-import userImage from "../../src/assets/img/icons/user.svg"; // Importar la imagen
+import "../../assets/styles/ProfileDropDown.css";
+import userImage from "../../assets/img/icons/user.svg"; // Importar la imagen
 
 export const ProfileDropDown = ({ onClose }) => {
   const dropdownRef = useRef(null); // Referencia para el contenedor del menú

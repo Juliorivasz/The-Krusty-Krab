@@ -7,9 +7,9 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'; // Importa el ícono de flecha
-import { Cart } from '../pages/Cart';
-import AddressPayment from '../pages/AddressPayment';
-import { OrderConfirmation } from '../pages/OrderConfirmation';
+import { Cart } from './pages/Cart';
+import AddressPayment from './pages/AddressPayment';
+import { OrderConfirmation } from './pages/OrderConfirmation';
 
 const steps = ['Revisión del Carrito', 'Dirección y Método de pago', 'Confirmación del Pedido'];
 

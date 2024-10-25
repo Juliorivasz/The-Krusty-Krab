@@ -1,6 +1,6 @@
 import FullWidthLayout from '../layouts/FullWidthLayout'
-import Cupones from '../components/promo/cupones'
-import PromosSection from '../components/promo/PromosSection'
+import Cupones from '../promo/cupones'
+import PromosSection from '../promo/PromosSection'
 
 export default function Promociones() {
   return (

@@ -1,6 +1,6 @@
-import "../assets/styles/UserProfile.css";
-import userImage from "../../src/assets/img/icons/user.svg";
-import pencilIcon from "../../src/assets/img/icons/pencil.svg";
+import "../../assets/styles/UserProfile.css";
+import userImage from "../../assets/img/icons/user.svg";
+import pencilIcon from "../../assets/img/icons/pencil.svg";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../layouts/Header";
 

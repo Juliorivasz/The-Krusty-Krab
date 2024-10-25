@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import closeModal from '../assets/img/icons/close-circle-outline.svg'; 
+import closeModal from '../../assets/img/icons/close-circle-outline.svg'; 
 
 export const Notification = ({ notifications, handleShowNotifications, showNotifications }) => {
 
