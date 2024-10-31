@@ -1,9 +1,19 @@
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, signInWithPopup, sendPasswordResetEmail } from "firebase/auth";
-import { auth, googleProvider, facebookProvider } from "./firebaseConfig";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, googleProvider, facebookProvider, db } from "./firebaseConfig";
 
 // Registro con email y contraseña
-export const registerWithEmail = (email, password) => {
-  return createUserWithEmailAndPassword(auth, email, password);
+export const registerWithEmail = async (email, password, nombre, apellido) => {
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  const user = userCredential.user;
+  
+  // Guarda el nombre y apellido en Firestore
+  await setDoc(doc(db, "users", user.uid), {
+    nombre,
+    apellido,
+    email
+  });
+  return user;
 };
 
 // Inicio de sesión con email y contraseña

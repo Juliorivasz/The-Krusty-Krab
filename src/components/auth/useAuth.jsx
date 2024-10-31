@@ -1,10 +1,12 @@
+import Swal from "sweetalert2";
 import { useState } from "react";
 import { 
   registerWithEmail, 
   loginWithEmail, 
   loginWithGoogle, 
   loginWithFacebook, 
-  logout 
+  logout, 
+  resetPassword
 } from "../../authService";
 import { useNavigate } from "react-router-dom";
 
@@ -14,17 +16,37 @@ const useAuth = () => {
   const [authError, setAuthError] = useState(null);
   const [authSuccess, setAuthSuccess] = useState(null);
 
-  const handleRegister = async (email, password) => {
+  const handleRegister = async (email, password, nombre, apellido) => {
     try {
-      await registerWithEmail(email, password);
+      await registerWithEmail(email, password, nombre, apellido);
+      Swal.fire({
+        title: "Registro completado!",
+        text: "Ya formas parte de nosotros!",
+        icon: "success"
+      }).then(() => {
+        navigate('/admin');
+      });
       setAuthSuccess("Usuario registrado exitosamente.");
       setAuthError(null);
     } catch (error) {
       console.error("Error en el registro:", error);
-      setAuthError("Error en el registro. Inténtalo de nuevo.");
+  
+      // Verifica el tipo de error de Firebase
+      if (error.code === 'auth/email-already-in-use') {
+        Swal.fire({
+          title: "Error en el registro",
+          text: "El correo electrónico ya está en uso.",
+          icon: "error"
+        });
+        setAuthError("El correo electrónico ya está en uso.");
+      } else {
+        setAuthError("Error en el registro. Inténtalo de nuevo.");
+      }
+  
       setAuthSuccess(null);
     }
   };
+  
 
   const handleLogin = async (email, password) => {
     try {
@@ -43,6 +65,7 @@ const useAuth = () => {
       const userGoogle = await loginWithGoogle();
       setAuthSuccess("Inicio de sesión con Google exitoso.");
       localStorage.setItem('isLogged', 'true');
+      localStorage.setItem('user', JSON.stringify(userGoogle.user));
       localStorage.setItem('userEmail', userGoogle.user.email);
       navigate("/menu");
       setAuthError(null);
@@ -77,12 +100,32 @@ const useAuth = () => {
     }
   };
 
+  const handleRecoveryPassword = async (email) => {
+    try {
+      await resetPassword(email);
+      Swal.fire({
+        title: "Envio exitoso!",
+        text: "Revisa tu correo, puede tardar unos minutos!",
+        icon: "success"
+      }).then(()=>{
+        navigate(0);
+      });
+      setAuthSuccess("Recuperacion enviada exitosamente.");
+      setAuthError(null);
+    } catch (error) {
+      console.error("Error al recuperar la contraseña:", error);
+      setAuthError("Error de recuperacion de constraseña.");
+      setAuthSuccess(null);
+    }
+  }
+
   return { 
     handleGoogleLogin, 
     handleFacebookLogin, 
     handleLogin, 
     handleRegister, 
-    handleLogout, 
+    handleLogout,
+    handleRecoveryPassword, 
     authError, 
     authSuccess 
   };

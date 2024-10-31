@@ -238,3 +238,17 @@
     opacity: 1;
 }
 
+
+.fade-out {
+    opacity: 0;
+    height: 0;
+    transition: opacity 2s ease-in-out;
+}
+.error-message {
+    color: red;
+    padding: 0.2rem;
+    margin: 1rem 0;
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    height: auto; /* Animación de desvanecimiento */
+  }

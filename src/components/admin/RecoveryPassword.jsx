@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { resetPassword } from "../../authService";
-import { MessageError } from "./MessageError";
+// import { resetPassword } from "../../authService";
+// import { MessageError } from "./MessageError";
+import useAuth from "../auth/useAuth";
 
 export const RecoveryPassword = ({ viewRecovery, setViewRecovery }) => {
   const [forgotEmail, setForgotEmail] = useState('');
-  const [isSent, setIsSent] = useState(false);
-  const [viewError, setViewError] = useState(false);
+  const {handleRecoveryPassword, authError, authSuccess} = useAuth();
 
   const changeView = () => {
     setViewRecovery(!viewRecovery);
@@ -15,14 +15,8 @@ export const RecoveryPassword = ({ viewRecovery, setViewRecovery }) => {
 
   const sendRecovery = async (e) => {
     e.preventDefault();
-    try {
-      await resetPassword(forgotEmail);
-      setIsSent(true);
-      setViewError(false);
-    } catch (error) {
-      console.error("Error al enviar el correo de recuperación:", error);
-      setViewError(true);
-    }
+    await handleRecoveryPassword(forgotEmail);
+    console.log('error: ',authError,'success', authSuccess);
   };
 
   return (
@@ -37,8 +31,8 @@ export const RecoveryPassword = ({ viewRecovery, setViewRecovery }) => {
           onChange={(e) => setForgotEmail(e.target.value)}
           required
         />
-        {viewError && <MessageError message={"Los datos ingresados son incorrectos"} />}
-        {isSent && <p style={{background: "white", padding: ".5rem", borderRadius: ".5rem"}}>Revisa tu correo para restablecer tu contraseña.</p>}
+        {/* {viewError && <MessageError message={"Los datos ingresados son incorrectos"} />}
+        {isSent && <p style={{background: "white", padding: ".5rem", borderRadius: ".5rem"}}>Revisa tu correo para restablecer tu contraseña.</p>} */}
         <button type="submit">Enviar</button>
       </form>
 
