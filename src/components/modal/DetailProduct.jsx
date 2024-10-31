@@ -25,7 +25,7 @@ export const DetailProduct = ({ product, showDetail, handleShowDetail, handleAdd
     <dialog open={showDetail} className="detail-product-dialog">
       <div className="container-detail-product">
         <div className='container-image-detail-product'>
-          <img src={image} alt={title} />
+          <img className='image-detail-product' src={image} alt={title} />
         </div>
         <h2 className="detail-product-title">{title}</h2>
         <div className="container-detail-price">
