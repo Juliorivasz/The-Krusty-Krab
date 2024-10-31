@@ -1,13 +1,32 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types"; // Importa PropTypes
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
-import "../../src/assets/styles/ProfileDropDown.css";
-import userImage from "../../src/assets/img/icons/user.svg"; // Importar la imagen
+import "../../assets/styles/ProfileDropDown.css";
+import userImage from "../../assets/img/icons/user.svg"; // Importar la imagen
+import { useSocialMedia } from "../auth/useSocialMedia";
 
 export const ProfileDropDown = ({ onClose }) => {
   const dropdownRef = useRef(null); // Referencia para el contenedor del menú
-  const [username, setUsername] = useState(localStorage.getItem('username'));
+  const {getDataGoogle} = useSocialMedia();
+  const [username, setUsername] = useState('Default');
+  const [imageProfile, setImageProfile] = useState(userImage);
   const navigate = useNavigate(); // Inicializa useNavigate
+
+  const handleProfile = () => {
+    const data = getDataGoogle();
+    if (data) {
+      setImageProfile(data.photoURL);
+      setUsername(data.displayName);
+    }else {
+      setImageProfile(userImage);
+      setUsername('Default');
+    }
+  };
+
+  useEffect(()=>{
+    handleProfile();
+  },[]);
 
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -18,6 +37,7 @@ export const ProfileDropDown = ({ onClose }) => {
   const handleLoggout = () => {
     localStorage.removeItem('isLogged');
     localStorage.removeItem('email');
+    localStorage.removeItem('user');
     window.location.reload();
   };
 
@@ -31,13 +51,13 @@ export const ProfileDropDown = ({ onClose }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside); // Limpiar el evento al desmontar el componente
     };
-  }, []);
+  }, [handleClickOutside]);
 
   return (
-    <div className="profile-dropdown-container" ref={dropdownRef}>
+    <div className={`profile-dropdown-container`} ref={dropdownRef}>
       <div className="profile-dropdown">
         <div className="profile-header">
-          <img src={userImage} alt="Usuario" className="profile-image" />
+          <img src={imageProfile} alt="Usuario" className="profile-image" />
           <p className="username">{username}</p>
         </div>
         <div className="links-container">

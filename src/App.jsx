@@ -1,15 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
-import { AdminRoutes } from './admin/AdminRoutes';
+import { AdminRoutes } from './components/admin/AdminRoutes';
 import './App.css';
-import NotFound from './pages/errors/notFound';
-import { Home } from './pages/Home';
-import { Menu } from "./pages/Menu";
-import Promociones from './pages/Promociones';
-import { RegisterUser } from './pages/RegisterUser';
+import NotFound from './components/pages/errors/NotFound';
+import { Home } from './components/pages/Home';
+import { Menu } from "./components/pages/Menu";
+import Promociones from './components/pages/Promociones';
+import { RegisterUser } from './components/user/RegisterUser';
 
-import { OrderHistory } from "./pages/OrderHistory";
+import { OrderHistory } from "./components/pages/OrderHistory";
 
-import { UserProfile } from './pages/UserProfile';
+import { UserProfile } from './components/pages/UserProfile';
 import StepperPay from './components/StepperPay';
 
 function App() {

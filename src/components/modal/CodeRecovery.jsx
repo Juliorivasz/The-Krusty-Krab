@@ -1,5 +1,3 @@
-// import { useEffect, useState } from "react";
-
 import { Timer } from "../admin/Timer";
 
 // eslint-disable-next-line react/prop-types

@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 
-import { Button } from '../components/ui/Button';
-import '../assets/styles/detailProduct.css';
-import closeDetailProduct from '../assets/img/icons/close-circle-outline-black.svg';
-import CounterUnits from '../components/counterUnits';
+import '../../assets/styles/detailProduct.css';
+import { Button } from '../ui/Button';
+import closeDetailProduct from '../../assets/img/icons/close-circle-outline-black.svg';
+import CounterUnits from '../counterUnits';
 import { useState } from 'react';
 
 export const DetailProduct = ({ product, showDetail, handleShowDetail, handleAddToCart}) => {

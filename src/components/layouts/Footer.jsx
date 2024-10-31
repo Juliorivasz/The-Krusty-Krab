@@ -1,7 +1,7 @@
-import facebook from "../assets/img/icons/facebook.svg";
-import instagram from "../assets/img/icons/instagram.svg";
-import twitter from "../assets/img/icons/x.svg";
-import logo from "../assets/img/logos/logo-the-krusty-krab-final.png"; // Ajusta la ruta según la ubicación de tu logo
+import facebook from "../../assets/img/icons/facebook.svg";
+import instagram from "../../assets/img/icons/instagram.svg";
+import twitter from "../../assets/img/icons/x.svg";
+import logo from "../../assets/img/logos/logo-the-krusty-krab-final.png"; // Ajusta la ruta según la ubicación de tu logo
 
 export default function Footer() {
   return (

@@ -1,11 +1,32 @@
-import "../assets/styles/UserProfile.css";
-import userImage from "../../src/assets/img/icons/user.svg";
-import pencilIcon from "../../src/assets/img/icons/pencil.svg";
+/* eslint-disable react-hooks/exhaustive-deps */
+import "../../assets/styles/UserProfile.css";
+import userImage from "../../assets/img/icons/user.svg";
+import pencilIcon from "../../assets/img/icons/pencil.svg";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../layouts/Header";
+import { useSocialMedia } from "../auth/useSocialMedia";
+import { useEffect, useState } from "react";
 
 export const UserProfile = () => {
+  const [imageProfile, setImageProfile] = useState(userImage);
+  const [username, setUsername] = useState('Default');
+  const {getDataGoogle} = useSocialMedia();
   const navigate = useNavigate();
+
+  const handleProfile = () => {
+    const data = getDataGoogle();
+    if (data) {
+      setImageProfile(data.photoURL);
+      setUsername(data.displayName);
+    }else {
+      setImageProfile(userImage);
+      setUsername('Default');
+    }
+  };
+
+  useEffect(()=>{
+    handleProfile();
+  },[]);
 
   const handleEditProfile = () => {
     navigate("/edit-profile");
@@ -17,12 +38,12 @@ export const UserProfile = () => {
       <div className="user-profile">
         <div className="profile-header">
           <div className="profile-image-container">
-            <img src={userImage} alt="Usuario" className="profile-image" />
+            <img src={imageProfile} alt="Usuario" className="profile-image" />
             <button className="edit-button" onClick={handleEditProfile}>
               <img src={pencilIcon} alt="Editar" />
             </button>
           </div>
-          <h1 className="profile-title">{localStorage.getItem('username')}</h1>
+          <h1 className="profile-title">{username}</h1>
         </div>
         {/* Sección del teléfono */}
         <div className="phone-section" style={{ marginBottom: "40px" }}>
