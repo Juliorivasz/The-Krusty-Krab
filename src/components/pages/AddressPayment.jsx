@@ -5,7 +5,7 @@ import mercadoPagoLogo from "../../assets/img/logos/mercadoPagoLogo.svg";
 import binanceLogo from "../../assets/img/logos/binanceLogo.svg";
 import useAddress from "../hooks/useAddress"; // Asegúrate de importar el custom hook
 
-const AddressPayment = ({ userId }) => {
+const AddressPayment = ({ userId, onAddressSelected, onPaymentMethodSelected }) => {
   const { addresses, loading, error, handleAddAddress, handleUpdateAddress, handleDeleteAddress } = useAddress(userId);
 
   const [newAddress, setNewAddress] = useState("");
@@ -51,10 +51,12 @@ const AddressPayment = ({ userId }) => {
 
   const handlePaymentMethodChange = (method) => {
     setSelectedPaymentMethod(method);
+    onPaymentMethodSelected(method);  // Notificar al componente padre
   };
-
+  
   const handleSelectAddress = (address) => {
-    setSelectedAddress(address); // Actualiza la dirección seleccionada
+    setSelectedAddress(address);
+    onAddressSelected(address);  // Notificar al componente padre
   };
 
   return (

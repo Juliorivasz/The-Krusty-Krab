@@ -51,7 +51,7 @@ const useAuth = () => {
   const handleLogin = async (email, password) => {
     try {
       const userLog = await loginWithEmail(email, password);
-      localStorage.setItem('user', JSON.stringify(userLog));
+      localStorage.setItem('user', JSON.stringify(userLog.user));
       setAuthSuccess("Inicio de sesión exitoso.");
       setAuthError(null);
     } catch (error) {
