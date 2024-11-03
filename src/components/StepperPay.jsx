@@ -1,22 +1,52 @@
-import * as React from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa el hook para la navegación
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack'; // Importa el ícono de flecha
-import { Cart } from './pages/Cart';
-import AddressPayment from './pages/AddressPayment';
-import { OrderConfirmation } from './pages/OrderConfirmation';
+/* eslint-disable no-unused-vars */
+import * as React from "react";
+import { useNavigate } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Cart } from "./pages/Cart";
+import AddressPayment from "./pages/AddressPayment";
 
-const steps = ['Revisión del Carrito', 'Dirección y Método de pago', 'Confirmación del Pedido'];
+import { initMercadoPago } from "@mercadopago/sdk-react";
+import { sendCartDataToBackend } from "../services/payment";
+import OrderConfirmation from "./pages/OrderConfirmation";
+
+const steps = [
+  "Revisión del Carrito",
+  "Dirección y Método de pago",
+  "Confirmación del Pedido",
+];
+
 
 export default function StepperPay() {
+  initMercadoPago("TEST-d98ac793-37db-40e9-b9f4-7eaac513331f", {
+    locale: "es-AR",
+  });
+  const [preferenceId, setPreferenceId] = React.useState(null);
+  const dataUser = JSON.parse(localStorage.getItem("user"));
+  const [userId, setUserId] = React.useState(dataUser.uid);
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
-  const navigate = useNavigate(); // Inicializa el hook para navegar
+  const navigate = useNavigate();
+  
+  const handleBuy = async ()=> {
+    const id = await sendCartDataToBackend();
+    console.log(id);
+    if(id) {
+        setPreferenceId(id);
+    }
+  }
+  // Estados para verificar selección de dirección y método de pago
+  const [isAddressSelected, setIsAddressSelected] = React.useState(false);
+  const [addressSelect, setAddressSelect] = React.useState("");
+  const [isPaymentMethodSelected, setIsPaymentMethodSelected] =
+    React.useState(false);
+    const [methodPaySelect, setMethodPaySelect] = React.useState(localStorage.getItem('paymentMethod'));
+    const [selectProducts, setSelectProducts] = React.useState(JSON.parse(localStorage.getItem('cart')));
 
   const isStepOptional = (step) => {
     return step === 1;
@@ -32,10 +62,23 @@ export default function StepperPay() {
       newSkipped = new Set(newSkipped.values());
       newSkipped.delete(activeStep);
     }
-
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     setSkipped(newSkipped);
   };
+
+  const handleMethodPay = (method) => {
+    setIsPaymentMethodSelected(true);
+    setMethodPaySelect(method);
+    if (method === "MercadoPago" && !preferenceId) {
+      handleBuy();
+    }
+  }
+
+  const handleAddress = (address) => {
+    setIsAddressSelected(true);
+    setAddressSelect(address);
+
+  }
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -46,15 +89,16 @@ export default function StepperPay() {
   };
 
   const handleGoToMenu = () => {
-    navigate('/menu'); // Cambia '/menu' por la ruta de tu menú
+    navigate("/menu");
   };
 
   return (
-    <Box sx={{ width: '100%', padding: "1rem" }}>
-      {/* Botón de flecha para ir al menú */}
-      <Button onClick={handleGoToMenu} sx={{ color: "#000", mb: 2, display: 'flex', alignItems: 'center' }}>
-        <ArrowBackIcon sx={{ mr: 1 }} /> {/* Flecha que apunta a la izquierda */}
-        Volver al Menú
+    <Box sx={{ width: "100%", padding: "1rem" }}>
+      <Button
+        onClick={handleGoToMenu}
+        sx={{ color: "#000", mb: 2, display: "flex", alignItems: "center" }}
+      >
+        <ArrowBackIcon sx={{ mr: 1 }} /> Volver al Menú
       </Button>
 
       <Stepper activeStep={activeStep} alternativeLabel>
@@ -62,7 +106,10 @@ export default function StepperPay() {
           const stepProps = {};
           const labelProps = {
             sx: {
-              color: activeStep === index || activeStep > index ? '#F89604' : 'inherit',
+              color:
+                activeStep === index || activeStep > index
+                  ? "#F89604"
+                  : "inherit",
             },
           };
           if (isStepOptional(index)) {
@@ -79,9 +126,12 @@ export default function StepperPay() {
                 {...labelProps}
                 StepIconProps={{
                   sx: {
-                    color: activeStep === index || activeStep > index ? '#F89604' : 'inherit',
-                    '&.Mui-active, &.Mui-completed': {
-                      color: '#F89604', // Color naranja para las bolitas activas y completadas
+                    color:
+                      activeStep === index || activeStep > index
+                        ? "#F89604"
+                        : "inherit",
+                    "&.Mui-active, &.Mui-completed": {
+                      color: "#F89604",
                     },
                   },
                 }}
@@ -97,18 +147,27 @@ export default function StepperPay() {
           <Typography sx={{ mt: 2, mb: 1 }}>
             Todos los pasos completados - proceso finalizado.
           </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Box sx={{ flex: '1 1 auto' }} />
-            <Button onClick={handleReset} sx={{ color: "#000" }}>Reiniciar</Button>
+          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+            <Box sx={{ flex: "1 1 auto" }} />
+            <Button onClick={handleReset} sx={{ color: "#000" }}>
+              Reiniciar
+            </Button>
           </Box>
         </React.Fragment>
       ) : (
         <React.Fragment>
-          {/* Renderizar el componente correspondiente al paso actual */}
           {activeStep === 0 && <Cart />}
-          {activeStep === 1 && <AddressPayment />}
-          {activeStep === 2 && <OrderConfirmation />}
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          {activeStep === 1 && (
+            <AddressPayment
+              userId={userId}
+              onAddressSelected={handleAddress}
+              onPaymentMethodSelected={handleMethodPay}
+            />
+          )}
+          {activeStep === 2 && methodPaySelect==="MercadoPago" && (
+            <OrderConfirmation address={addressSelect} methodPaySelect={methodPaySelect} preferenceId={preferenceId} products={selectProducts}/>
+          )}
+          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Button
               color="inherit"
               disabled={activeStep === 0}
@@ -117,9 +176,17 @@ export default function StepperPay() {
             >
               Atrás
             </Button>
-            <Box sx={{ flex: '1 1 auto' }} />
-            <Button onClick={handleNext} sx={{ color: "#000" }}>
-              {activeStep === steps.length - 1 ? 'Finalizar' : 'Siguiente'}
+            <Box sx={{ flex: "1 1 auto" }} />
+            <Button
+              onClick={handleNext}
+              sx={{ color: "#000" }}
+              // Desactiva el botón "Siguiente" en el paso 1 si no hay dirección y método de pago
+              disabled={
+                activeStep === 1 &&
+                (!isAddressSelected || !isPaymentMethodSelected)
+              }
+            >
+              {activeStep === steps.length - 1 ? "Finalizar" : "Siguiente"}
             </Button>
           </Box>
         </React.Fragment>
@@ -127,7 +194,3 @@ export default function StepperPay() {
     </Box>
   );
 }
-
-
-
-

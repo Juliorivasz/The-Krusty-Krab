@@ -2,13 +2,14 @@ import "../../assets/styles/dashboard.css";
 import { Categories } from "../admin/categories";
 import { Products } from "../admin/Products";
 import Banner from "../banner/Banner";
-import { listProducts } from "../../helpers/products";
 import Footer from "../layouts/Footer";
 import { Header } from "../layouts/Header";
 import { DetailProduct } from "../modal/DetailProduct";
 import { useEffect, useState } from "react";
+import useProducts from "../hooks/useProducts"; // Importa el custom hook
 
 export const Menu = () => {
+  const { products, loading, error } = useProducts(); // Utiliza el hook
   const [productDetails, setProductDetails] = useState({
     isOpen: false,
     product: null,
@@ -46,8 +47,6 @@ export const Menu = () => {
     });
   };
 
-  console.log(cart);
-
   const handleQuantityChange = (item, change) => {
     setCart((prevCart) => {
       const existingProduct = prevCart.find(
@@ -76,6 +75,16 @@ export const Menu = () => {
     );
   };
 
+  // Agrupamos los productos por categoría
+  const categorizedProducts = products.reduce((acc, product) => {
+    const category = product.category || "Otros";
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(product);
+    return acc;
+  }, {});
+
   return (
     <>
       <Header
@@ -89,36 +98,16 @@ export const Menu = () => {
           <main className="main-content">
             <h1 className="text-2xl font-bold">Categoría</h1>
             <Categories />
-            <Products
-              typeProducts={"Hamburguesas"}
-              listProducts={listProducts.listBurgers}
-              handleShowDetail={handleShowDetail}
-            />
-            <Products
-              typeProducts={"Pizzas"}
-              listProducts={listProducts.listPizzas}
-              handleShowDetail={handleShowDetail}
-            />
-            <Products
-              typeProducts={"Empanadas"}
-              listProducts={listProducts.listEmpanadas}
-              handleShowDetail={handleShowDetail}
-            />
-            <Products
-              typeProducts={"Snacks"}
-              listProducts={listProducts.listSnacks}
-              handleShowDetail={handleShowDetail}
-            />
-            <Products
-              typeProducts={"Helados"}
-              listProducts={listProducts.listHelados}
-              handleShowDetail={handleShowDetail}
-            />
-            <Products
-              typeProducts={"Bebidas"}
-              listProducts={listProducts.listBebidas}
-              handleShowDetail={handleShowDetail}
-            />
+            {loading && <p>Cargando productos...</p>}
+            {error && <p>Error: {error}</p>}
+            {Object.entries(categorizedProducts).map(([category, items]) => (
+              <Products
+                key={category}
+                typeProducts={category}
+                listProducts={items}
+                handleShowDetail={handleShowDetail}
+              />
+            ))}
           </main>
         </div>
         {productDetails.isOpen && (
@@ -134,3 +123,4 @@ export const Menu = () => {
     </>
   );
 };
+
